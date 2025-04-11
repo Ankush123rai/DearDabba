@@ -2,9 +2,9 @@ import facebook from "../assets/images/facebook.png";
 import Instagram from "../assets/images/instagram.png";
 import Linkedin from "../assets/images/linkedin.png";
 import SnapchatSquare from "../assets/images/snapchat.png";
-import LoginForm from "../components/LoginForm";
+import SignUpForm from "../components/SignupForm";
 
-const Login = () => {
+const Signup = () => {
   return (
     <div className="h-96 bg-gradient-to-b from-green-500 to-green-0">
       <div className="max-w-6xl mx-auto ">
@@ -53,11 +53,11 @@ const Login = () => {
           </div>
         </div>
         <div className=" bg-white rounded-xl p-8 m-4">
-          <LoginForm />
+          <SignUpForm />
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
