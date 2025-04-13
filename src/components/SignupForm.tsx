@@ -91,7 +91,7 @@ const LoginForm = () => {
                     name="whatsapp"
                     checked={whatsappOption === "different"}
                     onChange={() => setWhatsappOption("different")}
-                    className="text-green-500 focus:ring-green-500"
+                  className="text-[#5BB834] focus:ring-green-500"
                   />
                   <span className="text-sm text-gray-600">
                     I have a different WhatsApp number
@@ -130,7 +130,7 @@ const LoginForm = () => {
 
             <button
               type="submit"
-              className="w-full py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors font-medium"
+              className="w-full py-3 bg-[#5BB834] text-white rounded-md hover:bg-green-600 transition-colors font-medium"
             >
               Continue
             </button>
