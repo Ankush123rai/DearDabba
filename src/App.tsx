@@ -1,18 +1,23 @@
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Signup from "./pages/Signup"
-import { Route,Routes } from "react-router-dom";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import Congratulation from "./components/Congratulation";
+const Signup = lazy(() => import("./pages/Signup"));
+const Login = lazy(() => import("./pages/Login"));
+const Home = lazy(() => import("./pages/Home"));
+const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const Congratulation = lazy(() => import("./components/Congratulation"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Signup />} />
-      
-      <Route path="/privacy-policy" element={<TermsAndConditions />} />
-      <Route path="/congratulation" element={<Congratulation />} />
-
-    </Routes>
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<TermsAndConditions />} />
+        <Route path="/congratulation" element={<Congratulation />} />
+      </Routes>
+    </Suspense>
   );
 }
 

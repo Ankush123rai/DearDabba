@@ -1,4 +1,3 @@
-import { Children } from "react";
 import facebook from "../assets/images/facebook.png";
 import Instagram from "../assets/images/instagram.png";
 import Linkedin from "../assets/images/linkedin.png";
@@ -42,13 +41,13 @@ const FirstLayout = ({ children }: FirstLayoutProps) => {
           </div>
           <div className="flex gap-4 sm:mt-0 mt-4">
             <a
-              href="#"
+              href="/login"
               className="text-[#415227] opacity-20 font-extrabold text-lg underline"
             >
               Login
             </a>
             <a
-              href="#"
+              href="/signup"
               className="text-[#415227] font-extrabold text-lg underline"
             >
               Signup
