@@ -6,9 +6,9 @@ import congratulation from '../assets/images/congratulation.gif'
 const Congratulation = () => {
   return (
     <FirstLayout>
-      <div className="flex items-center justify-center min-h-screen flex-col text-center sm:px-4 px-1">
+      <div className="flex items-center justify-center flex-col text-center sm:px-4 px-1">
 
-        <div className="flex justify-center relative mb-4">
+        <div className="flex justify-center relative">
           <BrandLogo />
         </div>
 
