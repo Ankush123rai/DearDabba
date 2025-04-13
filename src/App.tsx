@@ -8,6 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Signup />} />
+      
       <Route path="/privacy-policy" element={<TermsAndConditions />} />
       <Route path="/congratulation" element={<Congratulation />} />
 
