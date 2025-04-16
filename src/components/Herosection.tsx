@@ -5,9 +5,10 @@ import logoImage from "../assets/images/logo.png";
 
 const HeroSection = () => {
   return (
+    <>
     <div className="relative w-full max-w-6xl h-[400px] md:h-[573px] mx-auto rounded-xl">
       <div
-        className="absolute w-full h-[500px] md:h-[573px] sm:top-[50%] top-[62%] left-1/2 "
+        className="absolute w-full h-[500px] md:h-[573px] sm:top-[50%] top-[62%] left-1/2 rounded-xl "
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundBlendMode: "darken",
@@ -42,7 +43,10 @@ const HeroSection = () => {
           Tag Line
         </p>
       </div>
+
     </div>
+
+    </>
   );
 };
 
