@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 
 import Home from '../assets/images/home.png';
@@ -8,58 +7,68 @@ import User from '../assets/images/user.png';
 
 const SecondLayout = () => {
   return (
-    <div className="h-96 bg-gradient-to-b from-[#5BB834] to-green-0">
-      <div className="max-w-6xl mx-auto mt-[-1rem]">
-        <nav className="w-full px-5 z-50">
-          <div className="max-w-7xl mx-auto sm:px-8 px-4 h-[94px] flex items-center justify-between">
-            <div className="flex items-center gap-[60px]">
-              <div className="flex items-center gap-5">
+    <div className="min-h-screen bg-gradient-to-b from-[#5BB834] to-green-0">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav className="w-full z-50">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
+            
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-6 md:gap-[30px] sm:px-8 px-0">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 ${isActive ? 'font-bold' : 'font-normal'}`
+                }
+              >
+                <img src={Home} alt="Home" className="w-5 h-5 md:w-6 md:h-6" />
+                <span className="text-[18px] md:text-[20px] text-[#415227]">Home</span>
+              </NavLink>
 
-                <NavLink
-                  to="/"
-                  className={({ isActive }) => `flex items-center gap-2.5 ${isActive ? 'font-bold' : 'font-normal'}`}
-                >
-                  <img src={Home} alt="Home" className="w-6 h-6" />
-                  <span className="text-[20px] text-[#415227]">Home</span>
-                </NavLink>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`
+                }
+              >
+                <img src={Cart} alt="Cart" className="w-5 h-5 md:w-6 md:h-6" />
+                <span className="text-[18px] md:text-[20px] text-[#36731D]">Cart</span>
+              </NavLink>
 
-                <NavLink
-                  to="/cart"
-                  className={({ isActive }) => `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`}
-                >
-                  <img src={Cart} alt="Cart" className="w-6 h-6" />
-                  <span className="text-[20px] text-[#36731D]">Cart</span>
-                </NavLink>
+              <NavLink
+                to="/collection"
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`
+                }
+              >
+                <img src={Bookmark} alt="Collection" className="w-5 h-5 md:w-6 md:h-6" />
+                <span className="text-[18px] md:text-[20px] text-[#36731D]">Collection</span>
+              </NavLink>
 
-                <NavLink
-                  to="/collection"
-                  className={({ isActive }) => `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`}
-                >
-                  <img src={Bookmark} alt="Collection" className="w-6 h-6" />
-                  <span className="text-[20px] text-[#36731D]">Collection</span>
-                </NavLink>
-
-                <NavLink
-                  to="/profile"
-                  className={({ isActive }) => `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`}
-                >
-                  <img src={User} alt="Profile" className="w-6 h-6" />
-                  <span className="text-[20px] text-[#36731D]">Profile</span>
-                </NavLink>
-
-              </div>
+              <NavLink
+                to="/profile"
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 ${isActive ? 'font-bold' : 'font-normal'}`
+                }
+              >
+                <img src={User} alt="Profile" className="w-5 h-5 md:w-6 md:h-6" />
+                <span className="text-[18px] md:text-[20px] text-[#36731D]">Profile</span>
+              </NavLink>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex justify-center md:justify-end items-center gap-3 md:gap-4">
               <NavLink
                 to="/login"
-                className={({ isActive }) => `text-[18px] underline ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`}
+                className={({ isActive }) =>
+                  `text-[16px] md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
+                }
               >
                 Login
               </NavLink>
+
               <NavLink
                 to="/signup"
-                className={({ isActive }) => `text-[18px] underline ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`}
+                className={({ isActive }) =>
+                  `text-[16px] md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
+                }
               >
                 Signup
               </NavLink>
@@ -67,7 +76,7 @@ const SecondLayout = () => {
           </div>
         </nav>
 
-        <div className="bg-white rounded-xl p-8 m-4">
+        <div className="bg-white rounded-xl mt-4 shadow-md">
           <Outlet />
         </div>
       </div>
