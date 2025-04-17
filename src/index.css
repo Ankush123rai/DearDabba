@@ -5,9 +5,11 @@
 @layer base {
   body {
     @apply antialiased;
+    font-family: "Poppins", sans-serif;
   }
   
   input[type="radio"] {
     @apply w-4 h-4;
   }
 }
+

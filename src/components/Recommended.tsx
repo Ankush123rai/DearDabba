@@ -4,6 +4,11 @@ import Service from "../assets/images/service.png";
 import chef from "../assets/images/chef.png";
 import share from "../assets/images/share.png";
 
+import healthy from "../assets/images/healthy.png";
+import dinning from "../assets/images/dinning.png";
+import offers from "../assets/images/offers.png";
+import events from "../assets/images/events.png";
+
 const section = [
   {
     image: restaurant,
@@ -50,19 +55,19 @@ const recommendedItems = [
 const exploreItems = [
   {
     title: "Healthy",
-    image: "", 
+    image: healthy,
   },
   {
     title: "Dining",
-    image: "", 
+    image: dinning,
   },
   {
     title: "Offers",
-    image: "", 
+    image: offers,
   },
   {
     title: "Food Events",
-    image: "", 
+    image: events,
   },
 ];
 
@@ -152,24 +157,32 @@ const Recommended = () => {
       </div>
 
       <div className="mb-8 sm:mb-12">
-        <h2 className="text-xl text-center sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-[#415227]">
-          Explore
-        </h2>
+  <h2 className="text-xl text-center sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-[#415227]">
+    Explore
+  </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-          {exploreItems.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-3 sm:p-4 gap-2 bg-white border border-opacity-15 border-gray-700 rounded-xl sm:rounded-2xl"
-            >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gray-200 rounded-full mb-1 sm:mb-2"></div>
-              <p className="text-sm sm:text-base md:text-lg font-medium text-center text-[#415227]">
-                {item.title}
-              </p>
-            </div>
-          ))}
+  <div className="w-full px-4 sm:px-6"> 
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+      {exploreItems.map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center justify-center p-4 sm:p-5 gap-3 bg-white border border-opacity-15 border-gray-700 rounded-xl hover:shadow-md transition-all duration-200"
+        >
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <p className="text-xs sm:text-sm md:text-base font-medium text-center text-[#415227] line-clamp-2">
+            {item.title}
+          </p>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
     </div>
   );
 };
