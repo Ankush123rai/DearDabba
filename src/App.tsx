@@ -1,7 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import SecondLayout from "./components/SecondLayout";
-import Search from "./pages/Search";
+import BrandLogo from "./components/BrandLogo";
+import SearchParams from "./pages/SearchParams";
+
 
 
 const Signup = lazy(() => import("./pages/Signup"));
@@ -9,13 +11,14 @@ const Login = lazy(() => import("./pages/Login"));
 const Home = lazy(() => import("./pages/Home"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 const Congratulation = lazy(() => import("./components/Congratulation"));
+const Search = lazy(() => import("./pages/Search"));
 
 function App() {
   return (
     <Suspense
       fallback={
         <div className="flex justify-center items-center min-h-screen">
-          Loading...
+          <BrandLogo/>
         </div>
       }
     >
@@ -28,6 +31,7 @@ function App() {
         <Route element={<SecondLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/search"element={<Search />} />
+          <Route path="/search/:name"element={<SearchParams />} />
           <Route path="/cart" element={<>Cart</>} />
           <Route path="/collection" element={<>Collection</>} />
           <Route path="/profile" element={<>Profile</>} />

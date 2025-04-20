@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" bottom-0 max-w-3xl text-center">
-        <h2 className="text-[rgba(91,184,52,0.48)] text-6xl md:text-8xl lg:text-[200px] font-medium tracking-tighter">
+        <h2 className="text-[rgba(91,184,52,0.48)] text-5xl md:text-8xl lg:text-[190px] font-medium tracking-tighter">
           DearDabba
         </h2>
       </div>
