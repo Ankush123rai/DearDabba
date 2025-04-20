@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import SecondLayout from "./components/SecondLayout";
+import Search from "./pages/Search";
+
 
 const Signup = lazy(() => import("./pages/Signup"));
 const Login = lazy(() => import("./pages/Login"));
@@ -25,6 +27,7 @@ function App() {
 
         <Route element={<SecondLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/search"element={<Search />} />
           <Route path="/cart" element={<>Cart</>} />
           <Route path="/collection" element={<>Collection</>} />
           <Route path="/profile" element={<>Profile</>} />

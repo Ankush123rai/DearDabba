@@ -58,7 +58,7 @@ const SecondLayout = () => {
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  `text-[16px] md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
+                  `text-[16px] underline md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
                 }
               >
                 Login
@@ -67,7 +67,7 @@ const SecondLayout = () => {
               <NavLink
                 to="/signup"
                 className={({ isActive }) =>
-                  `text-[16px] md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
+                  `text-[16px] underline md:text-[18px] ${isActive ? 'font-semibold text-[#415227]' : 'font-extrabold text-[#415227]'}`
                 }
               >
                 Signup

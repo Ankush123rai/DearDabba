@@ -99,7 +99,10 @@ const Home = () => {
   return (
     <div>
       <Herosection />
+      <div className="relative bottom-0 md:bottom-10">
       <LocationSearchBar />
+      </div>
+
       <Recommended />
       <div className="flex mx-[6rem] items-center my-4 ">
         <div className="flex-grow border-t border-gray-500 p-2"></div>
