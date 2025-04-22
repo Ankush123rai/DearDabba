@@ -124,7 +124,9 @@ const Search = () => {
         </div>
       </div>
 
-      <Footer />
+      <div className='mr-8'>
+       <Footer />
+     </div>
     </div>
   );
 };

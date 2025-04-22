@@ -4,79 +4,113 @@ import piza from "../assets/images/piza.png";
 
 const FoodItemCard: React.FC = () => {
   return (
-    <div className="w-[462px] h-[233px] bg-[#F2FFEC] border border-[rgba(91,184,52,0.18)] rounded-[25px] relative flex">
-      <div className="w-[322px] bg-white rounded-[28px] shadow-2xl relative translate-x-[2px] translate-y-[2px]">
+    <div className="w-full max-w-[500px] h-auto md:h-[244px] bg-[#F2FFEC] border border-[rgba(91,184,52,0.18)] rounded-[25px] relative flex flex-col md:flex-row">
+      <div className="w-full md:w-[350px] bg-white rounded-[28px] shadow-2xl relative translate-x-0 translate-y-0 md:translate-x-[2px] md:translate-y-[2px] mb-4 md:mb-0 md:mr-4">
         <img
           src={piza}
           alt="Food Item"
-          className="w-full object-cover rounded-t-[28px] relative bottom-10"
+          className="w-full object-cover rounded-t-[28px] relative md:bottom-10"
         />
-        <div className="flex flex-col items-center gap-1 relative bottom-7">
+        <div className="flex flex-col items-center gap-1 relative md:bottom-7 p-2 md:p-0">
           <div className="flex items-center">
-            <span className="text-[16px] text-[#7D7D7D] line-through mr-2">
+            <span className="text-[14px] md:text-[16px] text-[#7D7D7D] line-through mr-2">
               ₹150
             </span>
-            <span className="text-[25px] font-medium">₹150</span>
+            <span className="text-[20px] md:text-[25px] font-medium">₹150</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-[16px] text-[#7D7D7D]">15 mins</span>
+            <span className="text-[14px] md:text-[16px] text-[#7D7D7D]">15 mins</span>
             <div className="w-2 h-2 bg-[#7D7D7D] rounded-full"></div>
-            <span className="text-[16px] text-[#7D7D7D]">1 km</span>
+            <span className="text-[14px] md:text-[16px] text-[#7D7D7D]">1 km</span>
           </div>
-          <span className="text-[25px] text-[#5BB834] font-medium">
+          <span className="text-[20px] md:text-[25px] text-[#5BB834] font-medium">
             30% OFF
           </span>
         </div>
       </div>
 
-      <div className="flex flex-col justify-between mx-3  py-6">
+      <div className="flex flex-col justify-between mx-3 py-4 md:py-6 flex-grow">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-[25px] font-semibold text-[#2A334A]">Samosa</h2>
-            <div className=" w-6 h-6 border-2 border-[#267F00] rounded-sm flex items-center justify-center">
-              <div className="w-3.5 h-3.5 bg-[#267F00] rounded-full"></div>
+            <h2 className="text-[20px] md:text-[25px] font-semibold text-[#2A334A]">
+              Samosa
+            </h2>
+            <div className="w-5 h-5 md:w-6 md:h-6 border-2 border-[#267F00] rounded-sm flex items-center justify-center">
+              <div className="w-3 h-3 md:w-3.5 md:h-3.5 bg-[#267F00] rounded-full"></div>
             </div>
           </div>
 
-          <p className="text-[15px] text-[#7D7D7D] leading-6 ">
+          <p className="text-[13px] md:text-[15px] text-[#7D7D7D] leading-5 md:leading-6 mt-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt...
           </p>
+
           <div className="flex items-center gap-2 mt-2">
             <div className="flex gap-1">
               {[...Array(4)].map((_, i) => (
-                <FaStar key={i} className="text-[#5BB834] w-5 h-5" />
+                <FaStar key={i} className="text-[#5BB834] w-4 h-4 md:w-5 md:h-5" />
               ))}
-              <FaStar className="text-[#CFCFCF] w-5 h-5" />
+              <FaStar className="text-[#CFCFCF] w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <span className="text-[15px] text-[#7D7D7D]">(334)</span>
+            <span className="text-[13px] md:text-[15px] text-[#7D7D7D]">(334)</span>
           </div>
         </div>
 
-        <div className="flex justify-between items-center w-[300px] mt-4">
-          <button className="flex items-center justify-center gap-3 bg-[rgba(91,184,52,0.18)] border border-[#267F00] rounded-[10px] px-5 py-1">
+        <div className="flex justify-between items-center w-full md:w-[300px] mt-4">
+          <button className="flex items-center justify-center gap-2 md:gap-3 bg-[rgba(91,184,52,0.18)] border border-[#267F00] rounded-[10px] px-4 md:px-5 py-1">
             <span className="text-[#267F00] flex items-center gap-2">
-              {" "}
               <FaPlus /> Add
             </span>
           </button>
-          <div className="flex gap-4">
-            <button className="text-[#CFCFCF] w-7 h-7">
-              <svg viewBox="0 0 24 24" fill="currentColor">
+
+          <div className="flex gap-3 md:gap-4">
+            <button className="text-[#CFCFCF] w-6 h-6 md:w-7 md:h-7 border-none">
+              <svg
+                width="18"
+                height="21"
+                viewBox="0 0 18 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M16 2H8C6.9 2 6 2.9 6 4V20L12 16L18 20V4C18 2.9 17.1 2 16 2Z"
                   opacity="0.4"
+                  d="M0.897766 19.2493V2.94308C0.897766 1.78042 1.84029 0.837891 3.00295 0.837891H15.6341C16.7967 0.837891 17.7393 1.78042 17.7393 2.94308L17.7393 19.2493C17.7393 20.5644 16.2257 21.3031 15.189 20.494L10.6138 16.3286C9.85247 15.7344 8.78457 15.7344 8.02329 16.3286L3.44808 20.494C2.41136 21.3031 0.897766 20.5644 0.897766 19.2493Z"
+                  fill="#5BB834"
                 />
-                <path d="M16 2H8V16L12 14L16 16V2Z" />
+                <path
+                  d="M3.00295 0.837891H15.6341C16.7968 0.837891 17.7393 1.78042 17.7393 2.94308V6.10086H0.897766V2.94308C0.897766 1.78042 1.84029 0.837891 3.00295 0.837891Z"
+                  fill="#5BB834"
+                />
               </svg>
             </button>
-            <button className="text-[#CFCFCF] w-7 h-7">
-              <svg viewBox="0 0 24 24" fill="currentColor">
+
+            <button className="text-[#CFCFCF] w-6 h-6 md:w-7 md:h-7">
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.12548 15.0077 5.24917 15.0227 5.37061L8.0826 9.84066C7.54305 9.32015 6.8089 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15C6.8089 15 7.54305 14.6799 8.0826 14.1593L15.0227 18.6294C15.0077 18.7508 15 18.8745 15 19C15 20.6569 16.3431 22 18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C17.1911 16 16.457 16.3201 15.9174 16.8407L8.9773 12.3706C8.99229 12.2492 9 12.1255 9 12C9 11.8745 8.99229 11.7508 8.9773 11.6294L15.9174 7.15934C16.457 7.67985 17.1911 8 18 8Z"
                   opacity="0.4"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M19.9727 6.76372C20.1677 7.15369 20.0096 7.62788 19.6197 7.82287L8.53882 13.3633L19.6197 18.9037C20.0096 19.0987 20.1677 19.5729 19.9727 19.9629C19.7777 20.3528 19.3035 20.5109 18.9136 20.3159L7.61119 14.6647C7.22122 14.4697 7.06315 13.9955 7.25814 13.6056C7.30572 13.5104 7.36992 13.4291 7.44547 13.3633C7.36992 13.2975 7.30572 13.2162 7.25814 13.121C7.06315 12.731 7.22122 12.2568 7.61119 12.0619L18.9136 6.41067C19.3035 6.21568 19.7777 6.37375 19.9727 6.76372Z"
+                  fill="#CFCFCF"
                 />
-                <path d="M18 10C19.1046 10 20 9.10457 20 8C20 6.89543 19.1046 6 18 6C16.8954 6 16 6.89543 16 8C16 9.10457 16.8954 10 18 10ZM6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14ZM18 22C19.1046 22 20 21.1046 20 20C20 18.8954 19.1046 18 18 18C16.8954 18 16 18.8954 16 20C16 21.1046 16.8954 22 18 22Z" />
+                <path
+                  d="M24.1413 6.52197C24.1413 8.55663 22.4919 10.2061 20.4572 10.2061C19.0149 10.2061 17.7662 9.37724 17.1614 8.1699C16.9129 7.67404 16.7731 7.11433 16.7731 6.52197C16.7731 4.48731 18.4226 2.83789 20.4572 2.83789C22.4919 2.83789 24.1413 4.48731 24.1413 6.52197Z"
+                  fill="#CFCFCF"
+                />
+                <path
+                  d="M24.1413 20.2057C24.1413 22.2404 22.4919 23.8898 20.4572 23.8898C18.4226 23.8898 16.7731 22.2404 16.7731 20.2057C16.7731 19.6133 16.9129 19.0536 17.1614 18.5578C17.7662 17.3504 19.0149 16.5216 20.4572 16.5216C22.4919 16.5216 24.1413 18.171 24.1413 20.2057Z"
+                  fill="#CFCFCF"
+                />
+                <path
+                  d="M10.4576 13.3638C10.4576 13.9562 10.3178 14.5159 10.0694 15.0118C9.46451 16.2191 8.2158 17.0479 6.7735 17.0479C4.73884 17.0479 3.08942 15.3985 3.08942 13.3638C3.08942 11.3292 4.73884 9.67975 6.7735 9.67975C8.2158 9.67975 9.46451 10.5086 10.0694 11.7159C10.3178 12.2118 10.4576 12.7715 10.4576 13.3638Z"
+                  fill="#CFCFCF"
+                />
               </svg>
             </button>
           </div>
