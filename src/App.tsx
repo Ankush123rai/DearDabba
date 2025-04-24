@@ -12,6 +12,7 @@ const Home = lazy(() => import("./pages/Home"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 const Congratulation = lazy(() => import("./components/Congratulation"));
 const Search = lazy(() => import("./pages/Search"));
+const Cart = lazy(() => import("./pages/Cart"));
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search"element={<Search />} />
           <Route path="/search/:name"element={<SearchParams />} />
-          <Route path="/cart" element={<>Cart</>} />
+          <Route path="/cart" element={<Cart/>} />
           <Route path="/collection" element={<>Collection</>} />
           <Route path="/profile" element={<>Profile</>} />
         </Route>
