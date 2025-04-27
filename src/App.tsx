@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import SecondLayout from "./components/SecondLayout";
 import BrandLogo from "./components/BrandLogo";
-import SearchParams from "./pages/SearchParams";
 
 
 
@@ -13,6 +12,7 @@ const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 const Congratulation = lazy(() => import("./components/Congratulation"));
 const Search = lazy(() => import("./pages/Search"));
 const Cart = lazy(() => import("./pages/Cart"));
+const SearchParams =lazy(()=> import("./pages/SearchParams"))
 
 function App() {
   return (
