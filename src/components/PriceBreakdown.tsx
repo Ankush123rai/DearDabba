@@ -10,6 +10,7 @@ interface PriceBreakdownProps {
   distance: string;
   onTipChange?: (amount: number) => void;
   paymentMethod?: string;
+  setPlaceOrder: (value: boolean) => void;
 }
 
 const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
@@ -22,6 +23,7 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
   distance,
   onTipChange,
   paymentMethod = 'Cash',
+  setPlaceOrder
 }) => {
   const total = subtotal + deliveryFee + platformFee + taxes + tip - discount;
   const savedAmount = discount > 0 ? discount : 10;
@@ -29,7 +31,7 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
   return (
     <div className="w-full max-w-lg mx-auto bg-[rgba(91,184,52,0.18)] rounded-2xl p-3 md:p-6">
       <div className="">
-        <div className='bg-white border border-[rgba(42,51,74,0.15)] rounded-3xl p-4 mb-4'>
+        <div className='bg-white border h-[300px] border-[rgba(42,51,74,0.15)] rounded-3xl p-4 mb-4'>
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 mb-6">
           <div className="flex justify-center items-center p-2 bg-[rgba(91,184,52,0.18)] rounded-xl w-full md:w-auto">
             <span className="text-lg font-medium text-[#267F00]">Payment type</span>
@@ -66,9 +68,9 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
           <div className="space-y-3">
             <div className="text-gray-600">Total Item</div>
-            <div className="text-gray-600 underline">Delivery fee | {distance}</div>
+            <div className="text-gray-600 underline decoration-dashed">Delivery fee | {distance}</div>
             <div className="text-sm text-gray-600">Order above ₹250 to save ₹10</div>
-            <div className="text-gray-600 underline">Extra discount for you</div>
+            <div className="text-gray-600 underline decoration-dashed">Extra discount for you</div>
           </div>
           <div className="text-right space-y-3">
             <div className="text-gray-600">₹{subtotal.toFixed(2)}</div>
@@ -83,8 +85,8 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
           <div className="space-y-3">
             <div className="text-gray-600">Delivery tip</div>
-            <div className="text-gray-600 underline">Platform fee</div>
-            <div className="text-gray-600 underline">GST & Restaurant charges</div>
+            <div className="text-gray-600 underline decoration-dashed">Platform fee</div>
+            <div className="text-gray-600 underline decoration-dashed">GST & Restaurant charges</div>
           </div>
           <div className="text-right space-y-3">
             <div className="text-[#9747FF] cursor-pointer" onClick={() => onTipChange && onTipChange(10)}>
@@ -104,7 +106,10 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
         </div>
       </div>
 
-      <button className="w-full bg-[#5BB834] text-white text-2xl font-normal py-3 rounded-2xl hover:bg-[#4aa02c] transition-colors">
+      <button 
+        onClick={() => setPlaceOrder(true)}
+        disabled={total <= 0}
+      className="w-full bg-[#5BB834] text-white text-2xl font-normal py-3 rounded-2xl hover:bg-[#4aa02c] transition-colors">
         Place Order ₹{total.toFixed(2)}
       </button>
     </div>
