@@ -4,16 +4,30 @@ import Breadcrumb from "../../components/Breadcrumb";
 import qrcode from "../../assets/images/qrcode.png";
 import Footer from "../../components/Footer";
 import { GoPlus } from "react-icons/go";
+import { useState } from "react";
+import DeleteGroupModal from "../../components/DeleteGroupModal";
 
 const Page4 = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleDelete = () => {
+    console.log("Group deleted");
+    setShowModal(false);
+  };
   return (
-    <div className="">
+    <div className="p-3 md:p-5">
+      <div className="flex justify-between items-center mb-4">
       <Breadcrumb
         paths={[
           { label: "Lunch Box" },
           { label: "Group Order Flow", isActive: true },
         ]}
       />
+      <button
+        className="w-[200px] border px-4 py-3 rounded-lg"
+        onClick={() => setShowModal(true)} 
+      >Delete group</button>
+      </div>
       <div className="flex flex-col md:flex-row ">
         <div className="flex-1 p-4 md:p-8">
           <div className="flex justify-between items-center mb-4">
@@ -92,6 +106,13 @@ const Page4 = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <DeleteGroupModal
+          onClose={() => setShowModal(false)}
+          onConfirm={handleDelete}
+        />
+      )}
+
       <Footer />
     </div>
   );
