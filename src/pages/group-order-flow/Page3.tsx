@@ -1,5 +1,6 @@
 import { FaChevronDown, FaPlus } from "react-icons/fa";
 import Breadcrumb from "../../components/Breadcrumb";
+import { GoPlus } from "react-icons/go";
 
 const Page3 = () => {
   return (
@@ -52,21 +53,22 @@ const Page3 = () => {
 
       <hr />
 
-      <div className="px-4 md:px-8 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <img
-            src="https://media.istockphoto.com/id/1418260625/photo/headshot-portrait-beautiful-african-teenage-girl-posing-standing-indoor.jpg?s=612x612&w=0&k=20&c=RRaViSHTM-PPxBH_SmXGovajB6UJ5LDxk6AHfowDYI4="
-            alt="User"
-            className="w-10 h-10 rounded-full"
-          />
-          <div>
-            <h3 className="font-bold text-green-800">Nupur (You)</h3>
-            <p className="text-gray-500 text-sm">No Item Added</p>
+      <div className="px-4 md:px-8 py-4 flex justify-between items-end">
+        <div>
+          <div className="flex items-center gap-4 mb-2">
+            <img
+              src="https://media.istockphoto.com/id/1418260625/photo/headshot-portrait-beautiful-african-teenage-girl-posing-standing-indoor.jpg?s=612x612&w=0&k=20&c=RRaViSHTM-PPxBH_SmXGovajB6UJ5LDxk6AHfowDYI4="
+              alt="User"
+              className="w-10 h-10 rounded-full"
+            />
+
+            <h2 className="font-bold text-lg">Nupur (you)</h2>
           </div>
+          <p className="text-gray-400 text-sm">0 Item Added</p>
         </div>
 
-        <button className="flex items-center gap-1 text-green-600 font-semibold">
-          <FaPlus /> Add Item
+        <button className="flex items-center gap-1 text-green-400 font-semibold ml-auto">
+          <GoPlus className="text-xl" /> Add Item
         </button>
       </div>
 
