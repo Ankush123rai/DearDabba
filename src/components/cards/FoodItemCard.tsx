@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPlus, FaStar } from "react-icons/fa";
-import piza from "../assets/images/piza.png";
+import piza from "../../assets/images/piza.png";
 
 const FoodItemCard: React.FC = () => {
   return (

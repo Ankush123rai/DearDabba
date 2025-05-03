@@ -1,11 +1,9 @@
-import { FaChevronDown, FaMinus } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import { BsFillPersonFill } from "react-icons/bs";
+import { FaChevronDown } from "react-icons/fa";
 import { MdOutlineDiscount } from "react-icons/md";
 import Breadcrumb from "../../components/Breadcrumb";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
-import DeleteGroupModal from "../../components/DeleteGroupModal";
+import DeleteGroupModal from "../../components/modal/DeleteGroupModal";
 import { useState } from "react";
 
 const Page5 = () => {

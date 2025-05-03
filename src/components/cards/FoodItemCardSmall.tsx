@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiFoodTag } from 'react-icons/bi';
 import { FaStar, FaPlus } from 'react-icons/fa';
 
 const FoodItemCardSmall: React.FC = () => {
@@ -33,9 +34,7 @@ const FoodItemCardSmall: React.FC = () => {
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-semibold text-gray-800">Samosa</h2>
-            <div className="w-4 h-4 border border-[#267F00] rounded-sm flex items-center justify-center">
-              <div className="w-2 h-2 bg-[#267F00] rounded-full"></div>
-            </div>
+            <BiFoodTag className="text-[green] text-2xl" />
           </div>
 
           <p className="text-xs text-gray-500 line-clamp-2 mb-2">

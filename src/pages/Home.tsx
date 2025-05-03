@@ -1,4 +1,4 @@
-import FoodCard from "../components/FoodCard";
+import FoodCard from "../components/cards/FoodCard";
 import Herosection from "../components/Herosection";
 import LocationSearchBar from "../components/LocationSearchBar";
 import Recommended from "../components/Recommended";

@@ -21,6 +21,9 @@ const GroupOrderFlow3 = lazy(() => import("./pages/group-order-flow/Page3"));
 const GroupOrderFlow4 = lazy(() => import("./pages/group-order-flow/Page4"));
 const GroupOrderFlow5 = lazy(() => import("./pages/group-order-flow/Page5"));
 
+//Tiffin service order flow
+const TiffinServiceOrderFlow1 = lazy(() => import("./pages/tiffin-service-order-flow/page1"));
+
 function App() {
   return (
     <Suspense
@@ -50,6 +53,9 @@ function App() {
           <Route path="/group-order-flow/page3" element={<GroupOrderFlow3 />} />
           <Route path="/group-order-flow/page4" element={<GroupOrderFlow4 />} />
           <Route path="/group-order-flow/page5" element={<GroupOrderFlow5 />} />
+
+          {/* Tiffin Service Order Flow */}
+          <Route path="/tiffin-service-order-flow" element={<TiffinServiceOrderFlow1 />} />
         </Route>
       </Routes>
     </Suspense>

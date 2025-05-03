@@ -7,7 +7,7 @@ import insta from "../assets/images/insta-worthy.png";
 import romantc from "../assets/images/romantic-mood.png";
 import nearBy from "../assets/images/nearBy.svg";
 import foodImage from "../assets/images/foodImage.png";
-import FoodCard from "../components/FoodCard";
+import FoodCard from "../components/cards/FoodCard";
 import Footer from "../components/Footer";
 
 const Search = () => {

@@ -1,6 +1,6 @@
 
 import { IoClose } from "react-icons/io5";
-import sadTriangle from "../assets/images/sadTraingle.png"; 
+import sadTriangle from "../../assets/images/sadTraingle.png"; 
 
 type DeleteGroupModalProps = {
   onClose: () => void;

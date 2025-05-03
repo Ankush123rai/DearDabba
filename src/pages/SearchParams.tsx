@@ -5,9 +5,9 @@ import Breadcrumb from "../components/Breadcrumb";
 import LocationSearchBar from "../components/LocationSearchBar";
 import indianChilli from "../assets/images/indian.png";
 import Recommended from "../components/Recommended";
-import FoodItemCard from "../components/FoodItemCard";
+import FoodItemCard from "../components/cards/FoodItemCard";
 import Footer from "../components/Footer";
-import FoodItemCardSmall from "../components/FoodItemCardSmall";
+import FoodItemCardSmall from "../components/cards/FoodItemCardSmall";
 import { RxCross2 } from 'react-icons/rx';
 
 const SearchParams = () => {

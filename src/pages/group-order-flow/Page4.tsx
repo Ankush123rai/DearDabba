@@ -5,7 +5,7 @@ import qrcode from "../../assets/images/qrcode.png";
 import Footer from "../../components/Footer";
 import { GoPlus } from "react-icons/go";
 import { useState } from "react";
-import DeleteGroupModal from "../../components/DeleteGroupModal";
+import DeleteGroupModal from "../../components/modal/DeleteGroupModal";
 
 const Page4 = () => {
   const [showModal, setShowModal] = useState(false);
