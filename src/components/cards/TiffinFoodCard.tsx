@@ -1,6 +1,6 @@
 import React from "react";
 import { BiFoodTag } from "react-icons/bi";
-import { FaStar } from "react-icons/fa";
+import { FaShareAlt, FaStar } from "react-icons/fa";
 
 interface FoodCardProps {
   image: string;
@@ -50,15 +50,7 @@ const TiffinFoodCard: React.FC<FoodCardProps> = ({
           </button>
 
           <button className="text-gray-400 hover:text-[#5BB834] transition-colors">
-            <svg width="16" height="16" viewBox="0 0 27 26" fill="currentColor">
-              <path
-                opacity="0.4"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M19.973 6.764a.75.75 0 0 1-.354.822L8.539 13.363l11.08 5.54a.75.75 0 0 1-.354 1.4.75.75 0 0 1-.354-.082L7.611 14.665a.75.75 0 0 1 0-1.33l11.254-5.626a.75.75 0 0 1 1.108.655z"
-              />
-              <path d="M24.141 6.522a3.684 3.684 0 1 1-7.368 0 3.684 3.684 0 0 1 7.368 0z" />
-            </svg>
+                      <FaShareAlt className="text-gray-400" />
           </button>
         </div>
       </div>

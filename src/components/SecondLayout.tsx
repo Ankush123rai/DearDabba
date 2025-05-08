@@ -76,10 +76,15 @@ const SecondLayout = () => {
           </div>
         </nav>
 
-        <div className="bg-white rounded-xl mt-4 shadow-md">
+        <div className="bg-white rounded-xl mt-4">
           <Outlet />
         </div>
       </div>
+      {/* <div className="text-center w-[100vw]">
+        <h2 className="text-[rgba(91,184,52,0.48)] ml-[-2.6rem] text-6xl sm:text-8xl lg:text-[230px] font-medium tracking-tighter mb-[-2.7rem]">
+          DearDabba
+        </h2>
+      </div> */}
     </div>
   );
 };

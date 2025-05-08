@@ -44,7 +44,8 @@ const Search = () => {
   type DummyData = typeof dummyDataType;
 
   return (
-    <div className="mx-4 md:mx-8">
+    <>
+     <div className="mx-4 md:mx-8">
       <Breadcrumb
         paths={[
           { label: "Home" },
@@ -125,9 +126,12 @@ const Search = () => {
       </div>
 
       <div className='mr-8'>
-       <Footer />
      </div>
     </div>
+    <Footer />
+
+    </>
+   
   );
 };
 

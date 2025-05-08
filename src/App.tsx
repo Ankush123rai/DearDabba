@@ -27,6 +27,7 @@ const WeeklyMenu = lazy(() => import("./pages/tiffin-service-order-flow/WeeklyMe
 
 //catering service flow
 const CateringService = lazy(()=>import('./pages/catering-service/CateringService'))
+const CateringService2 = lazy(()=>import('./pages/catering-service/page2'))
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
 
           {/* catering service flow */}
           <Route path="/catering-service" element={<CateringService />} />
+          <Route path="/catering-service/:name" element={<CateringService2 />} />
         </Route>
       </Routes>
     </Suspense>

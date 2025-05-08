@@ -1,11 +1,13 @@
-import React from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import KitchenCardList from "../../components/cards/KitchenCardList";
+import vegetarian from '../../assets/images/vegetarian.png'
+import { BiFoodTag } from "react-icons/bi";
+import Footer from "../../components/Footer";
 
 const CateringService = () => {
   return (
-    <div className="relative min-h-screen p-4">
+    <><div className="relative min-h-screen p-4">
       <Breadcrumb
         paths={[
           { label: "Home" },
@@ -16,13 +18,10 @@ const CateringService = () => {
       <LocationSearchBar isMic={true} />
 
       <div className="flex flex-col lg:flex-row gap-8 p-4">
-        {/* Left Side */}
         <div className="w-full lg:max-w-xl flex flex-col gap-6">
           <button className="font-medium text-lg w-full bg-[#5BB8342E] rounded-lg py-3 text-[#5BB834]">
             Add Date
           </button>
-
-          {/* Meal Slots */}
           <div className="flex justify-between flex-wrap gap-4">
             {[
               { title: 'Breakfast', time: '8am-11am' },
@@ -44,9 +43,7 @@ const CateringService = () => {
               </div>
             ))}
           </div>
-
-          {/* Time slot selection */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             {[
               { time: '6pm-7pm', active: true },
               { time: '7pm-8pm' },
@@ -54,7 +51,7 @@ const CateringService = () => {
             ].map(({ time, active }) => (
               <div
                 key={time}
-                className={`px-4 py-2 rounded-lg ${
+                className={`px-4 py-2 min-w-[140px] rounded-lg ${
                   active ? 'bg-[#5BB834] text-white' : 'bg-[#F2FFED] text-[#267F00]'
                 } text-sm`}
               >
@@ -62,23 +59,23 @@ const CateringService = () => {
               </div>
             ))}
           </div>
-
-          {/* Select Food */}
-          <div className="border border-[#CFCFCF] rounded-xl p-6">
+          
+          <hr className=""/> 
+          <div className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold text-[#2A334A]">Select Food</h2>
               <button className="text-xl font-semibold text-[#5BB834]">Select All</button>
             </div>
 
             <div className="flex flex-wrap gap-10">
-              {/* Veg Group */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-6 h-6 bg-[#5BB834] rounded" />
+                  <input
+                        type="checkbox"
+                        className="w-6 h-6 accent-[#5BB834]"
+                      />
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-[#267F00] rounded p-1">
-                      <div className="w-3.5 h-3.5 bg-[#267F00] rounded-full"></div>
-                    </div>
+                    <BiFoodTag className="text-[green] text-3xl" />
                     <div className="text-2xl font-medium text-[#5BB834]">Veg</div>
                   </div>
                 </div>
@@ -86,20 +83,23 @@ const CateringService = () => {
                 <div className="flex items-center gap-4">
                   <div className="w-6 h-6 border border-[#5BB834] rounded bg-white"></div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-white rounded-full" />
+                  <input
+                        type="checkbox"
+                        className="w-6 h-6 accent-[#5BB834]"
+                      />
                     <div className="text-2xl font-medium text-[#2A334A]">Vegan</div>
                   </div>
                 </div>
               </div>
 
-              {/* Non-Veg Group */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-6 h-6 bg-[#5BB834] rounded" />
+                <input
+                        type="checkbox"
+                        className="w-6 h-6 accent-[#5BB834]"
+                      />
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-[#FF0000] rounded p-1">
-                      <div className="w-3.5 h-3.5 bg-[#FF0000] rounded-full"></div>
-                    </div>
+                    <BiFoodTag className="text-[red] text-3xl" />
                     <div className="text-2xl font-medium text-[#2A334A]">Non-Veg</div>
                   </div>
                 </div>
@@ -115,7 +115,6 @@ const CateringService = () => {
             </div>
           </div>
 
-          {/* People Count Inputs */}
           <div className="flex flex-col gap-6">
             <div>
               <label className="text-base font-semibold text-[#2A334A]">
@@ -140,27 +139,28 @@ const CateringService = () => {
             </div>
           </div>
 
-          {/* Add Another Order */}
-          <div className="flex justify-center">
+          <div className="flex justify-center my-4">
             <button className="flex items-center gap-2 text-[#267F00] font-bold italic text-lg">
               <span className="text-2xl">＋</span> Add another order
             </button>
           </div>
 
-          {/* Proceed Button */}
           <div className="flex justify-center">
-            <button className="w-full bg-[#5BB834] py-3 rounded-xl text-white text-lg font-medium">
+            <button className="w-full bg-[#5BB834] m-5 py-3 rounded-xl text-white text-lg font-medium">
               Proceed
             </button>
           </div>
         </div>
 
-        {/* Right Side */}
         <div className="w-full">
           <KitchenCardList />
         </div>
       </div>
+      
     </div>
+    <Footer/>
+    </>
+    
   );
 };
 

@@ -4,6 +4,7 @@ import LocationSearchBar from "../../components/LocationSearchBar";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { ChevronDown } from "lucide-react";
 import TiffinSummaryModal from "../../components/modal/TiffinSummaryModal";
+import Footer from "../../components/Footer";
 
 const WeeklyItem = ({ label, day }) => {
   return (
@@ -199,6 +200,7 @@ const WeeklyMenu = () => {
             }}
         />
       )}
+      <Footer/>
     </div>
   );
 };

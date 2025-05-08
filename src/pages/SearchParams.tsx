@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
-import { FaCross, FaStar, FaTimes } from "react-icons/fa";
+import { FaStar, FaTimes } from "react-icons/fa";
 import Breadcrumb from "../components/Breadcrumb";
 import LocationSearchBar from "../components/LocationSearchBar";
 import indianChilli from "../assets/images/indian.png";
@@ -52,7 +52,8 @@ const SearchParams = () => {
   ];
 
   return (
-    <div className="mx-4 md:mx-8 relative">
+    <>
+     <div className="mx-4 md:mx-8 relative">
 
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
@@ -331,9 +332,12 @@ const SearchParams = () => {
       </div>
 
      <div className='mr-4'>
-     <Footer />
      </div>
     </div>
+    <Footer />
+
+    </>
+   
   );
 };
 

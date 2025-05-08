@@ -75,6 +75,7 @@ const Cart: React.FC = () => {
   const taxes = 48.75;
 
   return (
+    <>
     <div className="mx-4 md:mx-8">
       <Breadcrumb
         paths={[
@@ -174,8 +175,10 @@ const Cart: React.FC = () => {
           />
         )}
       </div>
-      <Footer />
     </div>
+    <Footer />
+    </>
+    
   );
 };
 

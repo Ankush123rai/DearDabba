@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaPlus, FaShareAlt } from "react-icons/fa";
+import KitchenCard from "./KitchenCard";
 
 interface Dish {
   title: string;
@@ -75,56 +75,7 @@ const nonVegKitchens: Kitchen[] = [
   },
 ];
 
-const KitchenCard: React.FC<{ kitchen: Kitchen }> = ({ kitchen }) => {
-  return (
-    <div className="bg-white w-[320px] rounded-2xl shadow">
-      <img
-        src={kitchen.kitchenImage}
-        alt={kitchen.name}
-        className="w-full h-32 object-cover rounded-lg"
-      />
-      <div className=" p-3">
-        <div className="flex justify-between items-start">
-          <div>
-            <h3 className="text-md font-semibold text-gray-800">
-              {kitchen.name}
-            </h3>
-            <p className="text-sm text-gray-500">{kitchen.location}</p>
-            <p className="text-sm text-green-600 mt-1">
-              {kitchen.time} • {kitchen.distance}
-            </p>
-          </div>
-          <div className="text-right">
-            <FaShareAlt className="text-gray-400 mb-1" />
-            <p className="text-green-600 text-sm font-semibold flex items-center gap-1 justify-end">
-              {kitchen.rating} <FaStar className="text-green-400" />
-            </p>
-          </div>
-        </div>
 
-        <div className="mt-3 flex justify-between items-center border rounded-xl p-3">
-          <div>
-            <p className="font-semibold">{kitchen.dish.title}</p>
-            <p className="text-green-600 text-sm">{kitchen.dish.price}</p>
-            <p className="text-sm text-gray-500 mt-1">View Details ➔</p>
-            <button className="mt-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm flex items-center">
-              <FaPlus className="mr-1" /> Add
-            </button>
-          </div>
-          <img
-            src={kitchen.dish.image}
-            alt={kitchen.dish.title}
-            className="w-24 h-20 object-cover rounded-lg ml-4"
-          />
-        </div>
-
-        <p className="text-center text-green-600 font-semibold mt-3 cursor-pointer hover:underline">
-          View Full Menu
-        </p>
-      </div>
-    </div>
-  );
-};
 
 const KitchenCardList: React.FC = () => {
   return (
