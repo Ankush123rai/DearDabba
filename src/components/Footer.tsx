@@ -82,8 +82,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Brand Name */}
-      <div className="text-center max-w-7xl mx-auto">
-        <h2 className="text-[rgba(91,184,52,0.48)] ml-[-2.6rem] text-6xl sm:text-8xl lg:text-[205px] font-medium tracking-tighter mb-[-2.7rem]">
+      <div className="text-center max-w-9xl mx-auto">
+        <h2 className="text-[rgba(91,184,52,0.48)] ml-[-2.3rem] text-6xl sm:text-8xl lg:text-[228px] font-medium tracking-tighter mb-[-2.7rem]">
           DearDabba
         </h2>
       </div>

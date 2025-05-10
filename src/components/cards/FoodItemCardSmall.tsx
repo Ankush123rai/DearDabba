@@ -1,8 +1,12 @@
-import React from 'react';
 import { BiFoodTag } from 'react-icons/bi';
-import { FaStar, FaPlus } from 'react-icons/fa';
+import { FaStar, FaPlus, FaShareAlt } from 'react-icons/fa';
+import { FaArrowRotateLeft } from 'react-icons/fa6';
 
-const FoodItemCardSmall: React.FC = () => {
+interface ItemProps{
+  isReOrder: boolean
+}
+
+const FoodItemCardSmall = ({isReOrder=false}:ItemProps) => {
   return (
     <div className="w-full max-w-[400px] h- sm:h-[180px] bg-[#F2FFEC] border border-[rgba(91,184,52,0.18)] rounded-2xl shadow-sm relative flex flex-col md:flex-row transition-all duration-300 hover:shadow-md">
       <div className="w-full md:w-[40%] bg-white rounded-2xl shadow-2xl">
@@ -53,10 +57,16 @@ const FoodItemCardSmall: React.FC = () => {
         </div>
 
         <div className="flex justify-between items-center ">
-          <button className="flex items-center gap-1 bg-[rgba(91,184,52,0.1)] hover:bg-[rgba(91,184,52,0.2)] border border-[#267F00] rounded-lg px-3 py-1.5 transition-colors">
+          {isReOrder?(
+            <button className="flex items-center gap-1 bg-[rgba(91,184,52,0.1)] hover:bg-[rgba(91,184,52,0.2)] border border-[#267F00] rounded-lg px-3 py-1.5 transition-colors">
+            <FaArrowRotateLeft  className="text-[#267F00] text-xs"/>
+            <span className="text-[#267F00] text-xs">Re Order</span>
+          </button>
+          ):
+          (<button className="flex items-center gap-1 bg-[rgba(91,184,52,0.1)] hover:bg-[rgba(91,184,52,0.2)] border border-[#267F00] rounded-lg px-3 py-1.5 transition-colors">
             <FaPlus className="text-[#267F00] text-xs" />
             <span className="text-[#267F00] text-xs">Add</span>
-          </button>
+          </button>)}
 
           <div className="flex gap-3">
             <button className="text-gray-400 hover:text-[#5BB834] transition-colors">
@@ -72,17 +82,7 @@ const FoodItemCardSmall: React.FC = () => {
             </button>
 
             <button className="text-gray-400 hover:text-[#5BB834] transition-colors">
-              <svg width="16" height="16" viewBox="0 0 27 26" fill="currentColor">
-                <path
-                  opacity="0.4"
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M19.973 6.764a.75.75 0 0 1-.354.822L8.539 13.363l11.08 5.54a.75.75 0 0 1-.354 1.4.75.75 0 0 1-.354-.082L7.611 14.665a.75.75 0 0 1 0-1.33l11.254-5.626a.75.75 0 0 1 1.108.655z"
-                />
-                <path
-                  d="M24.141 6.522a3.684 3.684 0 1 1-7.368 0 3.684 3.684 0 0 1 7.368 0z"
-                />
-              </svg>
+              <FaShareAlt className="text-gray-400" />
             </button>
           </div>
         </div>

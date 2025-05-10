@@ -194,7 +194,7 @@ const SearchParams = () => {
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center md:items-start p-4 md:p-6 max-w-6xl mx-auto mt-5">
+      <div className="flex flex-col md:flex-row justify-between items-center md:items-start p-4 md:p-6 max-w-7xl mx-auto mt-5">
         <div className="flex justify-center items-center mb-4 md:mb-0 md:mr-6">
           <img
             src={indianChilli}
@@ -274,7 +274,7 @@ const SearchParams = () => {
             </svg>
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 mt-4">
+        <div className="flex flex-wrap gap-4 mt-4 justify-center items-center">
           <FoodItemCard />
           <FoodItemCard />
         </div>
@@ -310,7 +310,7 @@ const SearchParams = () => {
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
 
-      <div className="flex flex-wrap gap-4 mt-6">
+      <div className="flex flex-wrap gap-4 mt-6 justify-center items-center">
         <FoodItemCard />
         <FoodItemCard />
       </div>

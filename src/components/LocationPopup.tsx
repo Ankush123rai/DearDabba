@@ -13,7 +13,7 @@ const LocationPopup = () => {
         <AddressForm />
       ) : (
         <div
-          className="absolute max-w-6xl bg-transparent"
+          className="absolute max-w-7xl bg-transparent"
           style={{
             top: "70%",
             left: "50%",

@@ -54,7 +54,7 @@ const KitchenCard: React.FC<{ kitchen: Kitchen }> = ({ kitchen }) => {
             <FaShareAlt className="text-gray-400" />
           </button>
         </div>
-            <p className="text-green-600 text-sm font-semibold flex items-center gap-1 justify-end">
+            <p className="text-green-600 bg-[#F6FFFF] mt-1 p-1 rounded-s-md text-sm font-semibold flex items-center gap-1 justify-end">
               {kitchen.rating} <FaStar className="text-green-400" />
             </p>
           </div>

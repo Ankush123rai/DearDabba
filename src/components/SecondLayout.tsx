@@ -8,7 +8,7 @@ import User from '../assets/images/user.png';
 const SecondLayout = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5BB834] to-green-0">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <nav className="w-full z-50">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
             

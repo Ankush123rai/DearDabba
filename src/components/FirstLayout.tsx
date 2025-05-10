@@ -9,7 +9,7 @@ type FirstLayoutProps = {
 const FirstLayout = ({ children }: FirstLayoutProps) => {
   return (
     <div className="h-96 bg-gradient-to-b from-[#5BB834] to-green-0">
-      <div className="max-w-6xl mx-auto ">
+      <div className="max-w-7xl mx-auto ">
         <div className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 py-4">
           <div></div>
           <div className="flex items-center gap-4">

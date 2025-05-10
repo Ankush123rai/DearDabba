@@ -29,6 +29,10 @@ const WeeklyMenu = lazy(() => import("./pages/tiffin-service-order-flow/WeeklyMe
 const CateringService = lazy(()=>import('./pages/catering-service/CateringService'))
 const CateringService2 = lazy(()=>import('./pages/catering-service/page2'))
 
+
+//ProfileDashboard
+const ProfileDashboard = lazy(()=>import('./pages/ProfileDashboard'))
+
 function App() {
   return (
     <Suspense
@@ -50,7 +54,7 @@ function App() {
           <Route path="/search/:name"element={<SearchParams />} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/collection" element={<>Collection</>} />
-          <Route path="/profile" element={<>Profile</>} />
+          <Route path="/profile" element={<ProfileDashboard/>} />
 
           {/* Group Order Flow */}
           <Route path="/group-order-flow" element={<GroupOrderFlow1 />} />
