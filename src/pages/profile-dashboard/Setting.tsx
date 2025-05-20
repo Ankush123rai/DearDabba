@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { BsChatDots } from 'react-icons/bs';
+import Modal from '../../components/Modal';
+import ChatInterface from '../../components/modal/ChatInterface';
+
 
 const Setting = () => {
   const [activeTab, setActiveTab] = useState<'notification' | 'helpCenter' | ''>('');
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [step, setStep] = useState(1)
   const [notifications, setNotifications] = useState({
     sms: true,
     whatsapp: true,
@@ -10,6 +15,14 @@ const Setting = () => {
   });
   const [helpCenterTab, setHelpCenterTab] = useState('');
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+
+  const handleResponse = (response: boolean) => {
+    console.log("User response:", response ? "Yes" : "No");
+    setModalOpen(false)
+    setStep(2)
+  };
+
+  
 
   const faqs = [
     {
@@ -24,6 +37,8 @@ const Setting = () => {
   ];
 
   return (
+    <>
+    {step===1&&(
     <div className="min-h-screen rounded-xl">
       <div className="space-y-4">
         {/* Tab Buttons */}
@@ -140,7 +155,9 @@ const Setting = () => {
               />
             </div>
 
-            <button className="bg-green-500 w-full py-2 text-white font-semibold rounded-lg">
+            <button
+              onClick={() => setModalOpen(true)}  
+             className="bg-green-500 w-full py-2 text-white font-semibold rounded-lg">
               Send
             </button>
           </div>
@@ -150,7 +167,37 @@ const Setting = () => {
       <div className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg cursor-pointer">
         <BsChatDots size={20} />
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+      <div className="flex flex-col text-center">
+        <div className="text-8xl mb-4">👍</div>
+        <h2 className="text-lg font-semibold my-6">Was The Information Helpful ?</h2>
+        <div className="grid grid-cols-2 gap-2 mt-4">
+          <button
+            onClick={() => handleResponse(true)}
+            className="px-8 py-2 w-full bg-green-100 text-green-700 font-semibold rounded hover:bg-green-200"
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => handleResponse(false)}
+            className="px-8 py-2 w-full bg-[#5BB834] text-white font-semibold rounded hover:bg-green-700"
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </Modal>
     </div>
+    )}
+
+    {step===2 &&(
+      <div className="min-h-screen rounded-xl">
+        <ChatInterface step={()=>setStep(1)}/>
+      </div>
+    )} 
+    </>
+    
   );
 };
 

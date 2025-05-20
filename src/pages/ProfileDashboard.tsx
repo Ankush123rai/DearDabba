@@ -8,6 +8,10 @@ import YourOrder from './profile-dashboard/YourOrder';
 import Booking from './profile-dashboard/Booking';
 import DinningTransaction from './profile-dashboard/DinningTransaction';
 import Setting from './profile-dashboard/Setting';
+import About from './profile-dashboard/About';
+import FeedbackForm from './profile-dashboard/FeedbackForm';
+import Report from './profile-dashboard/Report';
+import { IoIosLogOut } from 'react-icons/io';
 
 const tabs = [
   {
@@ -66,9 +70,9 @@ const contentMap: Record<string, JSX.Element> = {
   'Booking': (<Booking/>),
   'Dinning transaction': (<DinningTransaction/>),
   'Settings': (<Setting/>),
-  'About': <div className="text-xl">About content goes here.</div>,
-  'Send feedback': <div className="text-xl">Send feedback content goes here.</div>,
-  'Report store': <div className="text-xl">Report store content goes here.</div>,
+  'About': (<About/>),
+  'Send feedback': (<FeedbackForm/>),
+  'Report store': (<Report/>),
   'My subscription': <div className="text-xl">My subscription content goes here.</div>,
   'Wallet': <div className="text-xl">Wallet content goes here.</div>,
 };
@@ -78,13 +82,14 @@ export default function ProfileDashboard() {
 
   return (
    <>
-   <div>
+   <div className='flex justify-between items-center'>
    <Breadcrumb
         paths={[
           { label: "Profile" },
           { label: selectedTab, isActive: true },
         ]}
       />
+      <IoIosLogOut className='text-3xl mr-5' />
    </div>
     <div className="flex px-5">
       <div className="w-[450px] bg-white rounded-lg px-4 mr-3">

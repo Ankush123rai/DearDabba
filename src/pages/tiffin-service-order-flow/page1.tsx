@@ -1,13 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import Breadcrumb from "../../components/Breadcrumb";
 import TiffinFoodCard from "../../components/cards/TiffinFoodCard";
 import Footer from "../../components/Footer";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import { BiFoodTag } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaTimes } from "react-icons/fa";
 import deliveryGuy from "../../assets/images/delivery-guy.png";
+import { Link } from "react-router-dom";
 
-const page1 = () => {
-  const data = new Array(6).fill({
+
+const Page1 = () => {
+  const allData = new Array(6).fill({
     image:
       "https://www.shutterstock.com/image-photo/baked-fried-salmon-salad-paleo-600nw-1907858902.jpg",
     title: "Food panda",
@@ -18,7 +24,41 @@ const page1 = () => {
     price: "₹50 for one",
     rating: "4.1",
     isveg: true,
+  }).map((item, i) => ({
+    ...item,
+    isveg: i % 2 === 0,
+    priceValue: 50 + i * 10, 
+    ratingValue: 4.1 - i * 0.2,
+  }));
+
+  const [filter, setFilter] = useState("All");
+  const [showFilter, setShowFilter] = useState(false);
+  const [selected, setSelected] = useState({
+    lowToHigh: false,
+    highToLow: false,
+    rating: false,
   });
+
+  const handleChange = (type: keyof typeof selected) => {
+    setSelected((prev) => ({
+      ...Object.fromEntries(Object.keys(prev).map((key) => [key, false])),
+      [type]: !prev[type],
+    }));
+  };
+
+  let filteredData =
+    filter === "All"
+      ? allData
+      : allData.filter((item) => (filter === "Veg" ? item.isveg : !item.isveg));
+
+  // Apply sorting
+  if (selected.lowToHigh) {
+    filteredData = [...filteredData].sort((a, b) => a.priceValue - b.priceValue);
+  } else if (selected.highToLow) {
+    filteredData = [...filteredData].sort((a, b) => b.priceValue - a.priceValue);
+  } else if (selected.rating) {
+    filteredData = [...filteredData].sort((a, b) => b.ratingValue - a.ratingValue);
+  }
 
   return (
     <div>
@@ -31,16 +71,74 @@ const page1 = () => {
 
       <div className="mt-5 flex gap-4 flex-col items-center">
         <LocationSearchBar isMic={true} />
-        <button className="my-4 sm:w-[350px] w-3xl py-2 px-4 rounded-lg text-white bg-[#5BB834]">
-          Schedule your order
-        </button>
+        <Link to="/schedule-your-order">
+          <button className="my-4 sm:w-[350px] w-3xl py-2 px-4 rounded-lg text-white bg-[#5BB834]">
+            Schedule your order
+          </button>
+        </Link>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 my-4">
-        <div className="flex items-center gap-2 text-[#5BB834]">
-          <p>Filter</p>
-          <IoIosArrowDown />
-        </div>
+      {/* Filter Button */}
+      <div className="flex flex-wrap justify-center gap-6 my-4 relative">
+        <button
+          className="flex items-center gap-2 text-[#5BB834] font-semibold"
+          onClick={() => setShowFilter(!showFilter)}
+        >
+          Filter <IoIosArrowDown />
+        </button>
+
+        {/* Filter Menu UI */}
+        {showFilter && (
+          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-80 sm:w-[400px] bg-white rounded-3xl shadow-2xl p-6 z-50">
+            <div className="flex justify-between items-center mb-4">
+              <div></div>
+              <h2 className="text-lg text-center font-semibold text-gray-800">Filter</h2>
+              <button
+                className="text-gray-500 hover:text-gray-700"
+                onClick={() => setShowFilter(false)}
+              >
+                <FaTimes />
+              </button>
+            </div>
+            <hr className="border-t border-green-400 mb-4" />
+            <div className="space-y-4">
+              <label className="flex justify-between items-center cursor-pointer">
+                <span className="text-gray-700">Price: Low - High</span>
+                <input
+                  type="checkbox"
+                  checked={selected.lowToHigh}
+                  onChange={() => handleChange("lowToHigh")}
+                  className="form-checkbox h-5 w-5 text-green-500"
+                />
+              </label>
+              <label className="flex justify-between items-center cursor-pointer">
+                <span className="text-gray-700">Price: High - Low</span>
+                <input
+                  type="checkbox"
+                  checked={selected.highToLow}
+                  onChange={() => handleChange("highToLow")}
+                  className="form-checkbox h-5 w-5 text-green-500"
+                />
+              </label>
+              <label className="flex justify-between items-center cursor-pointer">
+                <span className="text-gray-700">Rating: High - Low</span>
+                <input
+                  type="checkbox"
+                  checked={selected.rating}
+                  onChange={() => handleChange("rating")}
+                  className="form-checkbox h-5 w-5 text-green-500"
+                />
+              </label>
+            </div>
+            <button
+              onClick={() => setShowFilter(false)}
+              className="mt-6 w-full bg-[#5BB834] text-white font-semibold py-4 rounded-lg"
+            >
+              Done
+            </button>
+          </div>
+        )}
+
         <div className="flex items-center gap-1">
           <BiFoodTag className="text-green-600 text-2xl" />
           <p>Veg</p>
@@ -61,9 +159,15 @@ const page1 = () => {
 
       <div className="p-4 md:p-6">
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-          {data.map((item, index) => (
-            <TiffinFoodCard key={index} {...item} />
-          ))}
+          {filteredData.length > 0 ? (
+            filteredData.map((item, index) => (
+              <TiffinFoodCard key={index} {...item} />
+            ))
+          ) : (
+            <p className="text-center col-span-full text-gray-500">
+              No items found for selected filter.
+            </p>
+          )}
         </div>
       </div>
 
@@ -76,9 +180,11 @@ const page1 = () => {
             <h1 className="text-[#267F00] text-2xl md:text-[40px] font-medium leading-tight sm:mt-6 mt-2">
               Place your order now <br className="hidden md:block" /> in advance
             </h1>
-            <button className="mt-5 bg-[#267F00] hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-xl">
-              Schedule Order
-            </button>
+            <Link to="/schedule-your-order">
+              <button className="mt-5 bg-[#267F00] hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-xl">
+                Schedule Order
+              </button>
+            </Link>
           </div>
 
           <img
@@ -99,4 +205,4 @@ const page1 = () => {
   );
 };
 
-export default page1;
+export default Page1;

@@ -29,8 +29,8 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
-        <div className="bg-white rounded-2xl w-full max-w-4xl p-6 sm:p-[3rem] shadow-lg relative flex flex-col gap-6">
+      <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50 px-4">
+        <div className="bg-white rounded-2xl w-full max-w-4xl p-4 sm:p-6 lg:p-[3rem] shadow-lg relative flex flex-col gap-6">
           <button 
             className="absolute top-4 right-4 text-gray-600 hover:text-black"
             onClick={onClose}
@@ -38,7 +38,8 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
             <X className="w-6 h-6" />
           </button>
 
-          <div className="flex justify-between items-center gap-6 sm:gap-[3rem]">
+          <div className="flex flex-col lg:flex-row justify-between items-stretch gap-6">
+            {/* Left Panel */}
             <div className="w-full">
               <h2 className="text-center font-semibold text-gray-800 text-lg mb-6">
                 Add Date
@@ -71,7 +72,8 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
               </div>
             </div>
 
-            <div className="w-full border rounded-2xl border-green-200 p-6">
+            {/* Right Panel */}
+            <div className="w-full border rounded-2xl border-green-200 p-4 sm:p-6">
               <h3 className="text-xl font-semibold text-center text-gray-800 mb-4">
                 Mini Tiffin
               </h3>
@@ -129,7 +131,7 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
             </div>
           </div>
 
-          <div className="sm:w-[400px] w-full mx-auto">
+          <div className="w-full sm:w-[300px] mx-auto">
             <button
               onClick={() => {
                 onConfirm();
@@ -145,9 +147,9 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
 
       {showCalendar && (
         <CalenderModal
-        dateType={dateType}
+          dateType={dateType}
           onClose={() => setShowCalendar(false)}
-          onConfirm={(date) => handleDateSelect(date)}
+          onConfirm={handleDateSelect}
         />
       )}
     </>

@@ -4,7 +4,6 @@ import SecondLayout from "./components/SecondLayout";
 import BrandLogo from "./components/BrandLogo";
 
 
-
 const Signup = lazy(() => import("./pages/Signup"));
 const Login = lazy(() => import("./pages/Login"));
 const Home = lazy(() => import("./pages/Home"));
@@ -32,6 +31,17 @@ const CateringService2 = lazy(()=>import('./pages/catering-service/page2'))
 
 //ProfileDashboard
 const ProfileDashboard = lazy(()=>import('./pages/ProfileDashboard'))
+
+// Home chefs order flow
+const HomeChefOrder = lazy(()=>import('./pages/Home-chefs-order-flow/Page1'))
+const WeeklyMenu2 = lazy(() => import("./pages/Home-chefs-order-flow/WeeklyMenu"));
+
+//healthy-order
+const HealthyOrder = lazy(()=>import('./pages/healthy-order/HealthyOrder'))
+
+//dining
+const Dinning = lazy(()=>import('./pages/dining/Dining'))
+const DinningDetails = lazy(()=>import('./pages/dining/DinningDetail'))
 
 function App() {
   return (
@@ -70,6 +80,18 @@ function App() {
           {/* catering service flow */}
           <Route path="/catering-service" element={<CateringService />} />
           <Route path="/catering-service/:name" element={<CateringService2 />} />
+
+          {/* Home chefs order flow */}
+          <Route path="/home-chef-order" element={<HomeChefOrder/>}/>
+          <Route path="/home-chef-order/weekly-menu" element={<WeeklyMenu2 />} />
+
+          {/* //healthy-order */}
+          <Route path="/healthy-order" element={<HealthyOrder />} />
+
+          {/* Dining */}
+          <Route path="/dinning" element={<Dinning />} />
+          <Route path="/dinning/:id" element={<DinningDetails />} />
+
         </Route>
       </Routes>
     </Suspense>

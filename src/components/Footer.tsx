@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="bg-white mt-12 px-4 sm:px-8">
       {/* App Promotion Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-16 mb-12 max-w-7xl mx-auto">
-        <p className="text-gray-500 text-center text-sm sm:text-md md:text-lg">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-16 mb-12 max-w-4xl mx-auto">
+        <p className="text-gray-500 text-center text-sm sm:text-md md:text-xl tracking-tighter">
           For better experience, download the DearDabba app now
         </p>
         <div className="flex gap-4 flex-wrap justify-center">

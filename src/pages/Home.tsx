@@ -175,16 +175,6 @@ const Home = () => {
       
        <Recommended title="Recommended" />
 
-        <div className="flex justify-center items-center gap-2">
-          {[1, 2, 3, 4, 5].map((dot, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-                index === 1 ? "bg-[#5BB834] sm:w-4 sm:h-4" : "bg-gray-200"
-              }`}
-            ></div>
-          ))}
-        </div>
       </div>
 
       <div className="mb-8 sm:mb-12">

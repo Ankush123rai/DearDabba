@@ -54,6 +54,7 @@ const TiffinFoodCard: React.FC<FoodCardProps> = ({
           </button>
         </div>
       </div>
+      
       <div className="flex justify-between items-center px-3 pb-3">
         <div className="flex flex-col space-y-1 w-full">
           <div className="flex justify-between items-center gap-2 w-full">
