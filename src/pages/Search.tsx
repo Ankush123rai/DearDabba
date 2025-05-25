@@ -13,12 +13,27 @@ import Footer from "../components/Footer";
 const Search = () => {
   const navigate = useNavigate();
 
-  const tabs: Array<keyof DummyData> = [
-    "Restaurant",
-    "Tiffin Services",
-    "Catering",
-    "Home Chefs",
-    "Delivery",
+  const tabs= [
+    {
+      title: "Restaurant",
+      link: "/search/restaurant",
+    },
+    {
+      title: "Tiffin Services",
+      link: "/search/tiffin-services",
+    },
+    {
+      title: "Catering",
+      link: "/search/catering",
+    },
+    {
+      title: "Home Chefs",
+      link: "/search/home-chefs",
+    },
+    {
+      title: "Delivery",
+      link: "/search/delivery",
+    }
   ];
 
   const data = new Array(9).fill({
@@ -61,15 +76,20 @@ const Search = () => {
         <div className="flex flex-wrap justify-center gap-4 md:gap-10 border-b border-gray-300 mb-4">
           {tabs.map((tab) => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
+              key={tab.title}
+              onClick={
+                () => {
+                  setActiveTab(tab.title as keyof DummyData);
+                  navigate(tab.link);
+                }
+              }
               className={`pb-2 text-sm md:text-xl transition-all ${
-                activeTab === tab
+                activeTab === tab.title
                   ? "text-green-700 font-bold border-b-2 border-green-700"
                   : "text-gray-400 border-b-2 border-transparent hover:text-green-700"
               }`}
             >
-              {tab}
+              {tab.title}
             </button>
           ))}
         </div>

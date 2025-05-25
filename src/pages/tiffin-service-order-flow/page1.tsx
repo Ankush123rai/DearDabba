@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 
 const Page1 = () => {
+  
   const allData = new Array(6).fill({
     image:
       "https://www.shutterstock.com/image-photo/baked-fried-salmon-salad-paleo-600nw-1907858902.jpg",

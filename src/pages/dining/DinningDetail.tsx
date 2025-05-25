@@ -1,6 +1,6 @@
 import { FaEllipsisH, FaShareAlt, FaStar } from "react-icons/fa";
 import Breadcrumb from "../../components/Breadcrumb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import { PiMapPinLineDuotone } from "react-icons/pi";
 import { IoMdCall } from "react-icons/io";
@@ -10,6 +10,7 @@ import menucard from '../../assets/images/menucard.png'
 import Footer from "../../components/Footer";
 
 const tabs = ["Menu", "Gallery", "Reviews", "About"];
+
 
 const popularDishes = [
   "Kanda Poha",
@@ -31,7 +32,7 @@ const images = [
   ];
 
 const DinningDetail = () => {
-
+  const { id } = useParams();
     const [activeTab, setActiveTab] = useState("Menu");
 
   const navigate = useNavigate();
@@ -109,7 +110,9 @@ const DinningDetail = () => {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <button className="bg-[#5BB834] text-white rounded-lg p-5">
+              <button
+                onClick={() => navigate(`/dinning/${id}/booking`)}
+               className="bg-[#5BB834] text-white rounded-lg p-5">
                 Book a table
               </button>
               <button className="bg-[#5BB8342E] text-green-500 rounded-lg p-5">

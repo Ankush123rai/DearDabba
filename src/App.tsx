@@ -42,6 +42,13 @@ const HealthyOrder = lazy(()=>import('./pages/healthy-order/HealthyOrder'))
 //dining
 const Dinning = lazy(()=>import('./pages/dining/Dining'))
 const DinningDetails = lazy(()=>import('./pages/dining/DinningDetail'))
+const DinningBooking = lazy(()=>import('./pages/dining/DinningBooking'))
+
+//coupon 
+const CouponPage = lazy(() => import("./pages/CouponPage"));
+
+//delivery
+const Delivery = lazy(() => import("./pages/delivery/Delivery"));
 
 function App() {
   return (
@@ -91,6 +98,12 @@ function App() {
           {/* Dining */}
           <Route path="/dinning" element={<Dinning />} />
           <Route path="/dinning/:id" element={<DinningDetails />} />
+          <Route path="/dinning/:id/booking" element={<DinningBooking />} />
+          {/* Coupons */}
+          <Route path="/coupons" element={<CouponPage />} />
+
+          {/* Delivery */}
+          <Route path="/delivery" element={<Delivery />} />
 
         </Route>
       </Routes>

@@ -9,6 +9,8 @@ import FoodItemCard from "../components/cards/FoodItemCard";
 import Footer from "../components/Footer";
 import FoodItemCardSmall from "../components/cards/FoodItemCardSmall";
 import { RxCross2 } from 'react-icons/rx';
+import { TbLocationFilled } from 'react-icons/tb';
+
 
 const SearchParams = () => {
   const { name } = useParams();
@@ -161,6 +163,7 @@ const SearchParams = () => {
         </div>
       )}
 
+      <div className='mb-4 flex justify-between items-center p-4'>
       <Breadcrumb
         paths={[
           { label: "Home" },
@@ -169,6 +172,16 @@ const SearchParams = () => {
         ]}
         onBack={() => navigate(-1)}
       />
+      <button className='bg-[#5BB834] flex w-full sm:w-[600px] font-bold cursor-pointer rounded-3xl py-3 px-4 text-white transition-colors justify-between items-center mr-[1rem]'
+        onClick={() => navigate("/coupons")}
+      >
+        <div>
+          <p className='text-md text-white'>Apply coupon over ₹350 bill</p>
+          <p className='text-xs text-white'>View coupon details</p>
+        </div>
+        <TbLocationFilled className='text-white bg-green-200 text-4xl rounded-full p-2' />
+      </button>
+      </div>
       
       <LocationSearchBar isMic={true} />
 

@@ -9,7 +9,7 @@ const SecondLayout = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#5BB834] to-green-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <nav className="w-full z-50">
+        <nav className="w-full z-50 sticky top-0 left-0 bg-transparent backdrop-blur-md p-4">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
             
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-6 md:gap-[30px] sm:px-8 px-0">

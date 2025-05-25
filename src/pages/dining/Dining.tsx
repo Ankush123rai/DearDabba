@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Breadcrumb from "../../components/Breadcrumb";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import healthyFood from "../../assets/images/healthy-food.png";
@@ -13,6 +13,7 @@ import topRated from "../../assets/images/topRated  .png";
 import map from "../../assets/images/map.png";
 import topcuisines from "../../assets/images/topcuisines.png";
 import MoodCarousel from "../../components/MoodCarousel";
+import Footer from "../../components/Footer";
 
 const Dining = () => {
   const exploreItems = [
@@ -120,6 +121,7 @@ const Dining = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

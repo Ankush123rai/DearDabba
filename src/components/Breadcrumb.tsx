@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 interface BreadcrumbProps {
   paths: { label: string; isActive?: boolean }[];
@@ -7,11 +8,12 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb: FC<BreadcrumbProps> = ({ paths, onBack }) => {
+  const navigate = useNavigate();
   return (
     <div className="w-full max-w-[1120px] mx-auto rounded-[18px] bg-transparent flex items-center px-4 py-2 md:h-[55px]">
       <div className="flex items-center gap-3 md:gap-4">
         <button
-          onClick={onBack}
+          onClick={onBack? onBack : () => navigate(-1)}
           className="w-10 h-10 md:w-[41.5px] md:h-[41.5px] flex items-center justify-center"
         >
           <FaArrowLeft className="text-[#415227] text-lg md:text-xl" />
