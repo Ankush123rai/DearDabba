@@ -1,6 +1,7 @@
 import { FaChevronDown, FaPlus } from "react-icons/fa";
 import Breadcrumb from "../../components/Breadcrumb";
 import { GoPlus } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Page3 = () => {
   return (
@@ -74,10 +75,10 @@ const Page3 = () => {
 
       <div className="flex-1 flex flex-col items-center justify-center text-gray-400">
         <p>No Friends Have Joined Yet</p>
-
+        <Link to='/group-order-flow/4'>
         <button className="bg-[#5BB834] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
           Add People
-        </button>
+        </button></Link>
       </div>
     </div>
   );

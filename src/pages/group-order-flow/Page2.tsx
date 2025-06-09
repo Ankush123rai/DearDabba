@@ -3,6 +3,7 @@ import groupOder from "../../assets/images/group-order.svg";
 import Breadcrumb from "../../components/Breadcrumb";
 import Footer from "../../components/Footer";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Page2 = () => {
   const [paymentTypeOpen, setPaymentTypeOpen] = useState(true);
@@ -108,10 +109,11 @@ const Page2 = () => {
                   </div>
                 )}
               </div>
-
+              <Link to='/group-order-flow/3'>
               <button className="w-full bg-[#5BB834] hover:bg-green-700 text-white font-semibold py-3 rounded-xl mt-4">
                 Start Group Order
               </button>
+              </Link>
             </div>
           </div>
         </div>

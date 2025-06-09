@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { FaStar, FaTimes } from "react-icons/fa";
 import Breadcrumb from "../components/Breadcrumb";
 import LocationSearchBar from "../components/LocationSearchBar";
@@ -193,9 +193,11 @@ const SearchParams = () => {
           >
             Schedule order
           </button>
+          <Link to='/group-order-flow'>
           <button className="bg-[#5BB8342E] rounded-lg py-2 px-4 border-none hover:bg-[#5BB8343A] transition-colors">
             Group Order
           </button>
+          </Link>
         </div>
         <button 
           onClick={toggleMenu}

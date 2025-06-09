@@ -75,10 +75,10 @@ function App() {
 
           {/* Group Order Flow */}
           <Route path="/group-order-flow" element={<GroupOrderFlow1 />} />
-          <Route path="/group-order-flow/page2" element={<GroupOrderFlow2 />} />
-          <Route path="/group-order-flow/page3" element={<GroupOrderFlow3 />} />
-          <Route path="/group-order-flow/page4" element={<GroupOrderFlow4 />} />
-          <Route path="/group-order-flow/page5" element={<GroupOrderFlow5 />} />
+          <Route path="/group-order-flow/2" element={<GroupOrderFlow2 />} />
+          <Route path="/group-order-flow/3" element={<GroupOrderFlow3 />} />
+          <Route path="/group-order-flow/4" element={<GroupOrderFlow4 />} />
+          <Route path="/group-order-flow/5" element={<GroupOrderFlow5 />} />
 
           {/* Tiffin Service Order Flow */}
           <Route path="/tiffin-service-order-flow" element={<TiffinServiceOrderFlow1 />} />

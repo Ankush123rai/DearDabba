@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import { GoPlus } from "react-icons/go";
 import { useState } from "react";
 import DeleteGroupModal from "../../components/modal/DeleteGroupModal";
+import { Link } from "react-router-dom";
 
 const Page4 = () => {
   const [showModal, setShowModal] = useState(false);
@@ -75,10 +76,10 @@ const Page4 = () => {
 
           <div className="text-center text-gray-400 mt-10">
             <p>No Friends Have Joined Yet</p>
-
+              <Link to="/group-order-flow/5">
             <button className="bg-[#5BB834] w-[400px] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
               Add People
-            </button>
+            </button></Link>
           </div>
         </div>
 

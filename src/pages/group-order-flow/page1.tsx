@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import groupOder from "../../assets/images/group-order.svg";
 import Breadcrumb from "../../components/Breadcrumb";
 import Footer from "../../components/Footer";
@@ -34,9 +35,11 @@ const page1 = () => {
               and coupon can be applied by host only
             </li>
           </ul>
+          <Link to='/group-order-flow/2'>
           <button className="bg-green-500 w-full text-white text-lg font-medium py-3 px-8 rounded-lg mt-10 hover:bg-green-600">
           Interesting, let's go ahead
         </button>
+        </Link>
         </div>
 
         
