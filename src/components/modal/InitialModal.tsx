@@ -12,9 +12,9 @@ const InitialModal: React.FC<Props> = ({ onClose }) => {
   return (
     <div className="fixed  inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 px-4">
       <div className="relative flex items-center bg-white rounded-[40px] py-5 gap-4 shadow-xl sm:w-[699px] h-[240px] w-full mx-auto">
-        <button
+      <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+          className="absolute z-10 top-4 right-4 text-gray-500 hover:text-black"
         >
           <RxCross2 size={28} />
         </button>
