@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPaperPlane } from "react-icons/fa";
+import share from '../../assets/images/share.png'
 import logo from '../../assets/images/logo.png';
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -37,7 +37,7 @@ const ChatInterface: React.FC<ChatProps> = ({ step }) => {
         </div>
 
         <div className="flex justify-end">
-          <div className="bg-[#4CAF50] text-white text-sm px-4 py-2 rounded-lg max-w-xs shadow">
+          <div className="bg-[#5BB8342E] text-white text-sm px-4 py-2 rounded-lg max-w-xs shadow">
             Payment and billing related query
             <div className="text-xs text-right text-white/70">11:11am ✓</div>
           </div>
@@ -62,14 +62,14 @@ const ChatInterface: React.FC<ChatProps> = ({ step }) => {
       </div>
 
       <div className="w-full p-5">
-        <div className="flex items-center bg-white rounded-full p-3 shadow">
+        <div className="flex items-center bg-white rounded-3xl p-3 shadow">
           <input
             type="text"
             placeholder="Type here..."
             className="flex-1 outline-none text-sm text-gray-700"
           />
-          <button className="text-green-500 text-lg">
-            <FaPaperPlane />
+          <button className="bg-[#c0f0ab] p-3 rounded-full text-lg">
+            <img src={share} className="w-4" alt="" />
           </button>
         </div>
       </div>

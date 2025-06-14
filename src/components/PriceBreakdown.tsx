@@ -86,7 +86,7 @@ const PriceBreakdown: React.FC<PriceBreakdownProps> = ({
           <div className="space-y-3">
             <div className="text-gray-600">Delivery tip</div>
             <div className="text-gray-600 underline decoration-dashed">Platform fee</div>
-            <div className="text-gray-600 underline decoration-dashed">GST & Restaurant charges</div>
+            <div className="text-gray-600 underline decoration-dashed">GST </div>
           </div>
           <div className="text-right space-y-3">
             <div className="text-[#9747FF] cursor-pointer" onClick={() => onTipChange && onTipChange(10)}>

@@ -131,7 +131,7 @@ const HealthyOrder = () => {
                           type="checkbox"
                           checked={proteinFilters[item]}
                           onChange={() => handleProteinChange(item)}
-                          className="form-checkbox h-5 w-5 text-green-500"
+                          className="form-checkbox h-5 w-5 accent-green-500"
                         />
                       </label>
                     ))}
@@ -157,7 +157,7 @@ const HealthyOrder = () => {
                 More <GoChevronDown />
               </p>
               {activeDropdown === "more" && (
-                <div className="absolute top-10 left-0 w-80 sm:w-[300px] bg-white rounded-3xl shadow-2xl p-6 z-50">
+                <div className="absolute top-10 left-[-13rem] w-80 sm:w-[300px] bg-white rounded-3xl shadow-2xl p-6 z-50">
                   <div className="flex justify-between items-center mb-4">
                     <div></div>
                     <h2 className="text-lg font-semibold text-gray-800">
@@ -184,7 +184,7 @@ const HealthyOrder = () => {
                           type="checkbox"
                           checked={value}
                           onChange={() => handleMoreChange(key)}
-                          className="form-checkbox h-5 w-5 text-green-500"
+                          className="form-checkbox h-5 w-5 accent-green-500"
                         />
                       </label>
                     ))}

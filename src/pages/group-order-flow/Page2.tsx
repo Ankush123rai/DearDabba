@@ -94,7 +94,7 @@ const Page2 = () => {
                       <input
                         type="radio"
                         name="payment"
-                        className="form-radio text-green-600"
+                        className="form-radio accent-green-600"
                       />
                       Self-payment
                     </label>
@@ -102,7 +102,7 @@ const Page2 = () => {
                       <input
                         type="radio"
                         name="payment"
-                        className="form-radio text-green-600"
+                        className="form-radio accent-green-600"
                       />
                       Split the bill
                     </label>

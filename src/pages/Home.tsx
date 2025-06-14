@@ -20,6 +20,8 @@ import dinning from "../assets/images/dinning.png";
 import offers from "../assets/images/offers.png";
 import events from "../assets/images/events.png";
 import { useNavigate } from "react-router-dom";
+import InitialModal from "../components/modal/InitialModal";
+import { useEffect, useState } from "react";
 
 const data = [
   {
@@ -153,6 +155,11 @@ const exploreItems = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(()=>{
+    setIsOpen(true)
+  },[])
   return (
     <div>
       <Herosection />
@@ -166,7 +173,7 @@ const Home = () => {
             <div
               key={index}
               onClick={() => navigate(item.link)}
-              className="flex flex-col cursor-pointer sm:flex-row items-center justify-center p-3 sm:p-4 gap-2 bg-white border border-opacity-15 border-gray-700 rounded-xl sm:rounded-2xl"
+              className="flex flex-col hover:scale-125 cursor-pointer sm:flex-row items-center justify-center p-3 sm:p-4 gap-2 bg-white border border-opacity-15 border-gray-700 rounded-xl sm:rounded-2xl"
             >
               <img
                 src={item.image}
@@ -195,16 +202,16 @@ const Home = () => {
                 <div
                   key={index}
                   onClick={() => navigate(item.link)}
-                  className="flex flex-col cursor-pointer w-full sm:w-[150px] items-center justify-center p-1 sm:p-2 gap-3 bg-white border border-opacity-15 border-gray-700 rounded-xl hover:shadow-md transition-all duration-200"
+                  className="flex flex-col cursor-pointer w-full sm:w-[190px] h-[217px] items-center justify-center p-1 sm:p-2 gap-3 bg-white border border-opacity-15 border-gray-700 rounded-xl hover:shadow-md transition-all duration-200"
                 >
-                  <div className="w-20 h-20 sm:w-39 sm:h-39 flex items-center justify-center">
+                  <div className=" flex items-center justify-center">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full max-h-32 object-contain"
                     />
                   </div>
-                  <p className="text-xs sm:text-sm md:text-base font-medium text-center text-[#415227] line-clamp-2">
+                  <p className="text-xs sm:text-sm md:text-xl font-medium text-center text-[#415227] line-clamp-2">
                     {item.title}
                   </p>
                 </div>
@@ -229,35 +236,38 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center sm:my-10 my-5 sm:gap-10 gap:5">
+      <div className="flex justify-center sm:mt-10 mt-5 sm:gap-[5rem] gap:5">
         <img
           src={Instagram}
           alt="Instagram"
-          className="sm:w-10 w-8 sm:h-10 h-8 cursor-pointer"
+          className="sm:w-16 w-8 sm:h-16 h-8 cursor-pointer"
         />
         <img
           src={facebook}
           alt="Facebook"
-          className="sm:w-10 w-8 sm:h-10 h-8 cursor-pointer"
+          className="sm:w-16 w-8 sm:h-16 h-8 cursor-pointer"
         />
         <img
           src={Linkedin}
           alt="Linkedin"
-          className="sm:w-10 w-8 sm:h-10 h-8 cursor-pointer"
+          className="sm:w-16 w-8 sm:h-16 h-8 cursor-pointer"
         />
         <img
           src={SnapchatSquare}
           alt="Snapchat"
-          className="sm:w-10 w-8 sm:h-10 h-8 cursor-pointer"
+          className="sm:w-16 w-8 sm:h-16 h-8 cursor-pointer"
         />
         <img
           src={tweeter}
           alt="tweeter"
-          className="sm:w-10 w-8 sm:h-10 h-8 cursor-pointer"
+          className="sm:w-16 w-8 sm:h-16 h-8 cursor-pointer"
         />
       </div>
       <AppDownloadSection />
       <Footer />
+
+       {isOpen && <InitialModal onClose={() => setIsOpen(false)} />}
+
     </div>
   );
 };

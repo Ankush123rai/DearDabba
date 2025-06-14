@@ -4,9 +4,10 @@ import Footer from "../../components/Footer";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import { BiFoodTag } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
-import deliveryGuy from "../../assets/images/delivery-guy.png";
+import deliveryLady from "../../assets/images/deliveryLady.png";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import homeChef from '../../assets/images/homeChef.svg'
 
 const Page1 = () => {
   const [selected, setSelected] = useState({
@@ -30,7 +31,7 @@ const Page1 = () => {
     }));
   };
 
-  const toggleFilter = () => setShowFilter(prev => !prev);
+  const toggleFilter = () => setShowFilter((prev) => !prev);
 
   const data = new Array(6).fill({
     image:
@@ -63,7 +64,7 @@ const Page1 = () => {
 
       <div className="flex flex-col items-center justify-center text-center my-5 mb-9">
         <div className="mb-6">
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <img
               className="w-14 h-14"
               src="https://t4.ftcdn.net/jpg/01/26/82/13/360_F_126821319_Pjl3djIEmaJUtpWvaMU6fsw0z826HPCW.jpg"
@@ -78,7 +79,8 @@ const Page1 = () => {
                 TASTE THE LOVE OF HOME.
               </p>
             </div>
-          </div>
+          </div> */}
+          <img src={homeChef} className="w-full sm:w-[700px]" alt="homeChef" />
         </div>
 
         <div className="text-gray-700 italic space-y-2 mb-6">
@@ -87,7 +89,8 @@ const Page1 = () => {
         </div>
 
         <p className="text-red-700 font-medium">
-          No delivery partner found, all our delivery partners are busy currently
+          No delivery partner found, all our delivery partners are busy
+          currently
         </p>
       </div>
 
@@ -98,7 +101,9 @@ const Page1 = () => {
         >
           <p>Filter</p>
           <IoIosArrowDown
-            className={`${showFilter ? "rotate-180" : ""} transition-transform duration-300`}
+            className={`${
+              showFilter ? "rotate-180" : ""
+            } transition-transform duration-300`}
           />
         </div>
 
@@ -106,7 +111,9 @@ const Page1 = () => {
           <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-80 sm:w-[400px] bg-white rounded-3xl shadow-2xl p-6 z-50">
             <div className="flex justify-between items-center mb-4">
               <div></div>
-              <h2 className="text-lg text-center font-semibold text-gray-800">Filter</h2>
+              <h2 className="text-lg text-center font-semibold text-gray-800">
+                Filter
+              </h2>
               <button
                 className="text-gray-500 hover:text-gray-700"
                 onClick={() => setShowFilter(false)}
@@ -122,7 +129,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.lowToHigh}
                   onChange={() => handleChange("lowToHigh")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="h-5 w-5 accent-green-500 rounded border border-gray-300"
                 />
               </label>
               <label className="flex justify-between items-center cursor-pointer">
@@ -131,7 +138,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.highToLow}
                   onChange={() => handleChange("highToLow")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="form-checkbox h-5 w-5 accent-green-500"
                 />
               </label>
               <label className="flex justify-between items-center cursor-pointer">
@@ -140,7 +147,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.rating}
                   onChange={() => handleChange("rating")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="form-checkbox h-5 w-5 accent-green-500"
                 />
               </label>
             </div>
@@ -176,35 +183,34 @@ const Page1 = () => {
         </div>
       </div>
 
-      <div className="w-full py-10 md:py-14 mt-2 mx-auto max-w-[1100px]">
+      <div className="w-full py-10 md:py-14 mt-2 mx-auto max-w-[1240px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#F1FFEB] rounded-[18px] px-6 sm:px-[3rem]">
           <div className="text-center md:text-left">
-            <h2 className="text-[#4D4D4D] text-xl md:text-[35px] font-medium mb-2">
+            <h2 className="text-[#4D4D4D] text-xl md:text-[38px] font-medium mb-2">
               Don't miss out on your favorites...
             </h2>
-            <h1 className="text-[#267F00] text-2xl md:text-[44px] font-medium leading-tight sm:mt-6 mt-2">
+            <h1 className="text-[#267F00] text-2xl md:text-[47px] font-medium leading-tight sm:mt-6 mt-2">
               Place your order now <br className="hidden md:block" /> in advance
             </h1>
-            <button className="mt-5 bg-[#5BB834] hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg text-2xl">
+            <button className="mt-5 sm:w-[385px] rounded-xl bg-[#5BB834] hover:bg-green-700 text-white font-semibold py-4 px-6 text-2xl">
               Schedule Order
             </button>
           </div>
 
           <img
-            src={deliveryGuy}
+            src={deliveryLady}
             alt="Delivery Guy"
             className="w-[390px] md:w-[360px] object-contain"
           />
         </div>
 
-        <div className="mt-6 text-center text-lg font-cursive text-gray-700">
+        <div className="mt-6 text-center text-[23px] font-cursive text-gray-700">
           <span className="mx-2">• Daily changing menu by chefs.</span>
           <span className="mx-2">• Freshly Made With Quality Ingredients</span>
         </div>
       </div>
 
       <Footer />
-      
     </div>
   );
 };

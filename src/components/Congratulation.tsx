@@ -23,11 +23,11 @@ const Congratulation = () => {
           />
         </div>
 
-        <h2 className="text-[14px] sm:text-[16px] sm:w-1/4 w-full md:text-[14px] font-light mb-2 sm:mt-[-3rem] mt-0">
+        <h2 className="text-[14px] sm:text-[14px] sm:w-1/4 w-full md:text-[12px] font-light mb-2 sm:mt-[-3rem] mt-0">
           Congratulations for registering your account on DearDabba!!
         </h2>
 
-        <p className="sm:w-1/3 w-full font-bold text-sm sm:text-base mb-4 max-w-md px-2 sm:px-0">
+        <p className="sm:w-1/3 w-full font-medium text-sm mb-4 max-w-md px-2 sm:px-0">
           Get free deliveries on your first 2 orders by 
           sharing DearDabba referral code with your 
           friends & family.
@@ -35,7 +35,7 @@ const Congratulation = () => {
 
         <button
           onClick={() => navigator.clipboard.writeText("Deardabba2201")}
-          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-full transition"
+          className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition"
         >
           Deardabba2201 Copy
         </button>

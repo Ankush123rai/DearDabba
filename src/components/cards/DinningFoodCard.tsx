@@ -1,8 +1,11 @@
 import {FaShareAlt, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const DinningFoodCard = () => {
+  const navigate = useNavigate()
   return (
-      <div className="w-[350px] cursor-pointer max-w-sm bg-white rounded-xl shadow-md overflow-hidden text-sm text-gray-700">
+    <div
+    onClick={() => navigate("/dinning/1")} className="w-[350px] cursor-pointer max-w-sm bg-white rounded-xl shadow-md overflow-hidden text-sm text-gray-700">
         <img
           src="https://www.shutterstock.com/image-photo/baked-fried-salmon-salad-paleo-600nw-1907858902.jpg"
           alt="kitchen image"

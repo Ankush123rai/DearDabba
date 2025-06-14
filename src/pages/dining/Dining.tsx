@@ -1,4 +1,3 @@
-
 import Breadcrumb from "../../components/Breadcrumb";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import healthyFood from "../../assets/images/healthy-food.png";
@@ -64,9 +63,9 @@ const Dining = () => {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
-        <div className="flex flex-row gap-5 overflow-x-auto whitespace-nowrap px-4">
+        <div className="flex flex-row gap-5 overflow-x-auto whitespace-nowrap px-4 scrollbar-hide">
           {Array.from({ length: 12 }).map((_, ind) => (
-            <div key={ind} className="flex-shrink-0">
+            <div key={ind} className="flex-shrink-0 mb-4">
               <DinningFoodCard />
             </div>
           ))}
@@ -84,7 +83,7 @@ const Dining = () => {
                   key={index}
                   className="flex flex-col items-center justify-center p-2 gap-2 cursor-pointer bg-white border border-opacity-15 border-gray-700 rounded-xl hover:shadow-md transition-all duration-200"
                 >
-                  <div className=" sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center">
+                  <div className="  flex items-center justify-center">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -100,8 +99,7 @@ const Dining = () => {
           </div>
         </div>
 
-
-        <MoodCarousel/>
+        <MoodCarousel />
 
         <div className="flex justify-between items-center mt-8 mx-4">
           <span className="mx-4 text-xl md:text-2xl font-bold text-[#415227] whitespace-nowrap">
@@ -115,13 +113,19 @@ const Dining = () => {
 
         <div className="p-4 md:p-6">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-            {Array.from({ length: 12 }).map((_, ind) => (
+            {/* {Array.from({ length: 12 }).map((_, ind) => (
               <HeathlyFoodCard key={ind} />
+            ))} */}
+
+            {Array.from({ length: 12 }).map((_, ind) => (
+              <div key={ind} className="flex-shrink-0 mb-4">
+                <DinningFoodCard />
+              </div>
             ))}
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

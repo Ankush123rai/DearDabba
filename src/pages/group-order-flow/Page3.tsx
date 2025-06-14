@@ -13,27 +13,27 @@ const Page3 = () => {
         ]}
       />
 
-      <div className="flex flex-wrap items-center justify-between p-4 md:px-8">
+      <div className="flex items-center justify-between p-4 md:px-8">
+        <div className="flex items-center justify-between w-1/3">
         <button className="flex items-center gap-2 border border-green-600 text-green-600 font-semibold py-2 px-4 rounded-lg">
           <FaPlus /> Add People
         </button>
         <div className="text-red-600 font-semibold text-sm mt-2 md:mt-0">
           20 Mins Left
         </div>
+        </div>
 
-        <div className="flex items-center gap-2 mt-2 md:mt-0 text-gray-800 font-semibold">
-          Delivery Address
+        <div className="w-1/2 ml-[2rem]">
+        <div className="flex justify-between items-center gap-2 mt-2 md:mt-0 text-gray-800 font-semibold">
+          <label>Delivery Address</label> 
           <FaChevronDown className="text-gray-500" />
         </div>
-      </div>
-
-      <div className="px-4 md:px-8 mb-4">
         <p className="text-gray-500 text-sm">
           Posh Complex, Hatkesh Udyog Naga...
         </p>
+        </div>
       </div>
 
-      <hr />
       <div className="px-4 md:px-8 py-4 flex items-start gap-[4rem]">
         <div className="flex items-center gap-4">
           <div>
@@ -42,7 +42,7 @@ const Page3 = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex gap-2 items-center">
           <img
             src="https://media.istockphoto.com/id/1418260625/photo/headshot-portrait-beautiful-african-teenage-girl-posing-standing-indoor.jpg?s=612x612&w=0&k=20&c=RRaViSHTM-PPxBH_SmXGovajB6UJ5LDxk6AHfowDYI4="
             alt="User"
@@ -72,11 +72,10 @@ const Page3 = () => {
           <GoPlus className="text-xl" /> Add Item
         </button>
       </div>
-
       <div className="flex-1 flex flex-col items-center justify-center text-gray-400">
         <p>No Friends Have Joined Yet</p>
         <Link to='/group-order-flow/4'>
-        <button className="bg-[#5BB834] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
+        <button className="bg-[#5BB834] w-[400px] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
           Add People
         </button></Link>
       </div>

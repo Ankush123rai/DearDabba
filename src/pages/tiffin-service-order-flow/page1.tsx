@@ -109,7 +109,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.lowToHigh}
                   onChange={() => handleChange("lowToHigh")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="orm-checkbox h-5 w-5 accent-green-500"
                 />
               </label>
               <label className="flex justify-between items-center cursor-pointer">
@@ -118,7 +118,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.highToLow}
                   onChange={() => handleChange("highToLow")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="form-checkbox h-5 w-5 accent-green-500"
                 />
               </label>
               <label className="flex justify-between items-center cursor-pointer">
@@ -127,7 +127,7 @@ const Page1 = () => {
                   type="checkbox"
                   checked={selected.rating}
                   onChange={() => handleChange("rating")}
-                  className="form-checkbox h-5 w-5 text-green-500"
+                  className="orm-checkbox h-5 w-5 accent-green-500"
                 />
               </label>
             </div>
@@ -174,18 +174,16 @@ const Page1 = () => {
 
       <div className="w-full py-10 md:py-14 mt-2 mx-auto max-w-[1240px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#F1FFEB] rounded-[18px] px-6 sm:px-[3rem]">
-          <div className="text-center md:text-left">
-            <h2 className="text-[#4D4D4D] text-xl md:text-[30px] font-medium mb-2">
+        <div className="text-center md:text-left">
+            <h2 className="text-[#4D4D4D] text-xl md:text-[41px] font-medium mb-2">
               Don't miss out on your favorites...
             </h2>
-            <h1 className="text-[#267F00] text-2xl md:text-[40px] font-medium leading-tight sm:mt-6 mt-2">
+            <h1 className="text-[#267F00] text-2xl md:text-[47px] font-medium leading-tight sm:mt-6 mt-2">
               Place your order now <br className="hidden md:block" /> in advance
             </h1>
-            <Link to="/schedule-your-order">
-              <button className="mt-5 bg-[#267F00] hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg text-xl">
-                Schedule Order
-              </button>
-            </Link>
+            <button className="mt-5  rounded-xl bg-[#5BB834] hover:bg-green-700 text-white font-semibold py-4 px-6 text-2xl">
+              Schedule Order
+            </button>
           </div>
 
           <img
@@ -195,7 +193,7 @@ const Page1 = () => {
           />
         </div>
 
-        <div className="mt-6 text-center text-sm text-gray-700">
+        <div className="mt-6 text-[23px] text-center text-sm text-gray-700">
           <span className="mx-2">• Daily changing menu by chefs.</span>
           <span className="mx-2">• Freshly Made With Quality Ingredients</span>
         </div>

@@ -96,7 +96,7 @@ const DinningDetail = () => {
           </div>
           <div className="flex items-center justify-between mt-5">
             <div className="flex gap-4">
-              <button className="bg-[#CFFFBB2E] text-lg rounded-md text-green-500 px-3 py-1">
+              <button className="bg-[##CFFFBB2E] text-lg rounded-md text-green-500 px-3 py-1">
                 <PiMapPinLineDuotone className="text-green-500 mr-1 inline-block" />
                 Directions
               </button>

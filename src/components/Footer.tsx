@@ -1,3 +1,4 @@
+import { FaApple } from "react-icons/fa";
 import facebook from "../assets/images/facebook.png";
 import Instagram from "../assets/images/instagram.png";
 import Linkedin from "../assets/images/linkedin.png";
@@ -9,30 +10,30 @@ const Footer = () => {
   return (
     <footer className="bg-white mt-12 px-4 sm:px-8">
       {/* App Promotion Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-16 mb-12 max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-16 mb-12 max-w-5xl mx-auto">
         <p className="text-gray-500 text-center text-sm sm:text-md md:text-xl tracking-tighter">
           For better experience, download the DearDabba app now
         </p>
-        <div className="flex gap-4 flex-wrap justify-center">
-          <button className="border border-gray-700 rounded-md px-4 py-2 flex items-center gap-2">
-            <div className="flex flex-col items-start">
-              <span className="text-xs uppercase font-sans">GET IT ON</span>
-              <span className="text-sm font-bold">Google Play</span>
-            </div>
-          </button>
-          <button className="border border-gray-700 rounded-md px-4 py-2 flex items-center gap-2">
-            <div className="w-5 h-5 relative">
-              <div className="absolute inset-0">
-                <div className="absolute inset-0 top-1/4 bg-gray-800"></div>
-                <div className="absolute left-1/2 right-1/4 top-0 bottom-3/4 bg-gray-800"></div>
-              </div>
-            </div>
-            <div className="flex flex-col items-start">
-              <span className="text-xs">Download on the</span>
-              <span className="text-sm font-bold">App Store</span>
-            </div>
-          </button>
-        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+                      <button className="flex items-center gap-2 px-4 py-2 border border-gray-800 rounded-md hover:bg-gray-50 transition-colors">
+                        <div className="relative w-5 h-5">
+                          <img src="https://cdn-icons-png.flaticon.com/512/732/732208.png" alt="" />
+                        </div>
+                        <div className="flex flex-col items-start">
+                          <span className="text-xs uppercase text-gray-600">GET IT ON</span>
+                          <span className="text-sm font-bold">Google Play</span>
+                        </div>
+                      </button>
+                      <button className="flex items-center gap-2 px-4 py-2 border border-gray-800 rounded-md hover:bg-gray-50 transition-colors">
+                        <div className="relative w-5 h-5">
+                        <FaApple className='text-[25px]'/>
+                        </div>
+                        <div className="flex flex-col items-start">
+                          <span className="text-xs text-gray-600">Download on the</span>
+                          <span className="text-sm font-bold">App Store</span>
+                        </div>
+                      </button>
+                    </div>
       </div>
 
       {/* Main Footer Content */}
@@ -81,12 +82,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Brand Name */}
-      <div className="text-center max-w-9xl mx-auto">
-        <h2 className="text-[rgba(91,184,52,0.48)] ml-[-2.3rem] text-6xl sm:text-8xl lg:text-[228px] font-medium tracking-tighter mb-[-2.7rem]">
-          DearDabba
-        </h2>
-      </div>
+     
     </footer>
   );
 };

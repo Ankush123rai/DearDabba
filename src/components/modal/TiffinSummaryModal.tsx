@@ -118,7 +118,7 @@ const TiffinSummaryModal = ({ onClose, onConfirm }: TiffinSummaryProps) => {
                 </div>
                 <div className="flex justify-between">
                   <span className="underline underline-offset-2 decoration-dotted">
-                    GST & Restaurant charges
+                    GST 
                   </span>
                   <span>₹48.75</span>
                 </div>

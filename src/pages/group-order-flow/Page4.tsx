@@ -7,6 +7,8 @@ import { GoPlus } from "react-icons/go";
 import { useState } from "react";
 import DeleteGroupModal from "../../components/modal/DeleteGroupModal";
 import { Link } from "react-router-dom";
+import { BiLinkAlt } from "react-icons/bi";
+import logo from "../../assets/images/logo.png";
 
 const Page4 = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,16 +20,18 @@ const Page4 = () => {
   return (
     <div className="p-3 md:p-5">
       <div className="flex justify-between items-center mb-4">
-      <Breadcrumb
-        paths={[
-          { label: "Lunch Box" },
-          { label: "Group Order Flow", isActive: true },
-        ]}
-      />
-      <button
-        className="w-[200px] border px-4 py-3 rounded-lg"
-        onClick={() => setShowModal(true)} 
-      >Delete group</button>
+        <Breadcrumb
+          paths={[
+            { label: "Lunch Box" },
+            { label: "Group Order Flow", isActive: true },
+          ]}
+        />
+        <button
+          className="w-[200px] border px-4 py-3 rounded-lg"
+          onClick={() => setShowModal(true)}
+        >
+          Delete group
+        </button>
       </div>
       <div className="flex flex-col md:flex-row ">
         <div className="flex-1 p-4 md:p-8">
@@ -76,10 +80,11 @@ const Page4 = () => {
 
           <div className="text-center text-gray-400 mt-10">
             <p>No Friends Have Joined Yet</p>
-              <Link to="/group-order-flow/5">
-            <button className="bg-[#5BB834] w-[400px] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
-              Add People
-            </button></Link>
+            <Link to="/group-order-flow/5">
+              <button className="bg-[#5BB834] w-[400px] hover:bg-green-600 text-white font-semibold py-3 px-10 rounded-lg mt-6">
+                Add People
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -95,13 +100,23 @@ const Page4 = () => {
             <p className="text-lg font-semibold text-black mb-6">
               Share This QR Code With Others To Start Group Order
             </p>
-            <div></div>
-            <img
-              src={qrcode}
-              alt="QR Code"
-              className="w-40 h-40 bg-white p-2 rounded-lg mx-auto mb-6"
-            />
-            <button className="bg-[#5BB834] mx-4 font-semibold text-white w-full text-center py-2 px-6 rounded-lg">
+            <div className="relative w-40 h-40 mx-auto mb-6">
+              <img
+                src={qrcode}
+                alt="QR Code"
+                className="w-full h-full bg-white p-2 rounded-lg"
+              />
+
+              <img
+                src={logo}
+                alt="Logo"
+                className="absolute top-1/2 left-1/2 w-12 h-12 transform -translate-x-1/2 -translate-y-1/2 rounded-md"
+              />
+            </div>
+
+            <p className="text-center mb-4">or</p>
+            <button className="bg-[#5BB834] sm:w-[360px] font-semibold text-white w-full text-center py-3 px-6 rounded-lg flex items-center justify-center gap-2 ">
+              <BiLinkAlt className="text-white text-lg" />
               Share A Link
             </button>
           </div>

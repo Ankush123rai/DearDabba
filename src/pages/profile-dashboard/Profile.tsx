@@ -42,6 +42,7 @@ export default function Profile() {
               value="same"
               checked={whatsappOption === 'same'}
               onChange={(e) => setWhatsappOption(e.target.value)}
+              className='accent-green-600'
             />
             My WhatsApp number is same as above
           </label>
@@ -51,6 +52,7 @@ export default function Profile() {
               name="whatsapp"
               value="different"
               checked={whatsappOption === 'different'}
+              className='accent-green-600'
               onChange={(e) => setWhatsappOption(e.target.value)}
             />
             I have a different WhatsApp number

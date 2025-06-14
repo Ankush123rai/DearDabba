@@ -4,10 +4,11 @@ import Home from '../assets/images/home.png';
 import Bookmark from '../assets/images/bookmark.png';
 import Cart from '../assets/images/Vector.png';
 import User from '../assets/images/user.png';
+import Deardabba from '../assets/images/DearDabba.png';
 
 const SecondLayout = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#5BB834] to-green-0">
+    <div className="h-96 bg-gradient-to-b from-[#5BB834] to-green-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <nav className="w-full z-50 sticky top-0 left-0 bg-transparent backdrop-blur-md p-4">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
@@ -76,15 +77,13 @@ const SecondLayout = () => {
           </div>
         </nav>
 
-        <div className="bg-white rounded-xl mt-4">
+        <div className="bg-[#fff] rounded-xl mt-4">
           <Outlet />
         </div>
       </div>
-      {/* <div className="text-center w-[100vw]">
-        <h2 className="text-[rgba(91,184,52,0.48)] ml-[-2.6rem] text-6xl sm:text-8xl lg:text-[230px] font-medium tracking-tighter mb-[-2.7rem]">
-          DearDabba
-        </h2>
-      </div> */}
+      <div className="flex justify-center items-center w-[100vw]">
+        <img src={Deardabba} alt="Deardabba" />
+      </div>
     </div>
   );
 };

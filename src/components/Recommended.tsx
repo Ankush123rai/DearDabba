@@ -39,6 +39,7 @@ const Recommended: React.FC<RecommendedProps> = ({
 }) => {
   const [current, setCurrent] = useState(0);
   const total = recommendedItems.length;
+  const [vegModeOn, setVegModeOn] = useState(false);
 
   const nextSlide = () => setCurrent((current + 1) % total);
 
@@ -50,20 +51,21 @@ const Recommended: React.FC<RecommendedProps> = ({
   const getPositionClass = (index: number) => {
     if (index === current) return "z-10 scale-100 opacity-100";
     if (index === (current - 1 + total) % total)
-      return "-translate-x-[250px] scale-90 opacity-50 z-5";
+      return "-translate-x-[250px] scale-75 opacity-30 z-0";
     if (index === (current + 1) % total)
-      return "translate-x-[250px] scale-90 opacity-50 z-5";
-    return "opacity-0 scale-75 z-0";
+      return "translate-x-[250px] scale-75 opacity-30 z-0";
+    return "opacity-0 scale-25 z-0";
   };
+  
 
   return (
     <div className="relative w-[80vw] max-w-[900px] mx-auto flex flex-col items-center justify-center">
       <div
-        className={`w-full flex items-center mb-6 ${
+        className={`w-full flex items-center mb-16 ${
           isVegMode ? "justify-between" : "justify-center"
         }`}
       >
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#415227]">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-[#415227]">
           {title}
         </h2>
         {isVegMode && (
@@ -72,7 +74,11 @@ const Recommended: React.FC<RecommendedProps> = ({
               VEG <br />
               <span className="text-xs">Mode</span>
             </div>
+            {vegModeOn?(
+              <img onClick={()=>setVegModeOn(!vegModeOn)} className="w-10" src="https://www.shutterstock.com/image-vector/on-off-green-switch-button-260nw-2265132911.jpg" alt="" />
+            ):(
             <svg
+            onClick={()=>setVegModeOn(!vegModeOn)}
               width="41"
               height="21"
               viewBox="0 0 61 31"
@@ -97,7 +103,7 @@ const Recommended: React.FC<RecommendedProps> = ({
                 strokeOpacity="0.18"
                 strokeWidth="0.82"
               />
-            </svg>
+            </svg>)}
           </div>
         )}
       </div>
@@ -107,13 +113,13 @@ const Recommended: React.FC<RecommendedProps> = ({
         {recommendedItems.map((item, index) => (
           <div
             key={item.id}
-            className={`absolute w-64 transition-all duration-500 ease-in-out ${getPositionClass(
+            className={`absolute w-56 transition-all duration-500 ease-in-out ${getPositionClass(
               index
             )}`}
           >
-            <div className="bg-[#F2FFEC] rounded-2xl sm:rounded-3xl p-4 h-[280px] flex flex-col justify-between shadow-sm hover:shadow-xl transition-shadow relative">
+            <div className="bg-[#F2FFEC] rounded-2xl sm:rounded-3xl py-4 h-[280px] flex flex-col justify-between shadow-sm hover:shadow-xl transition-shadow relative">
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-[35%]">
-                <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
+                <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-[216px] md:h-[216px] bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -123,8 +129,8 @@ const Recommended: React.FC<RecommendedProps> = ({
               </div>
 
               <div className="mt-auto pt-6 px-3 pb-3">
-                <div className="mb-2">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
+                <div className="">
+                  <h3 className="text-lg sm:text-2xl font-medium text-gray-800">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-500">
@@ -132,10 +138,10 @@ const Recommended: React.FC<RecommendedProps> = ({
                   </p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-base sm:text-lg font-bold text-[#5BB834]">
+                  <p className="text-base sm:text-2xl font-medium text-[#5BB834]">
                     {item.discount}
                   </p>
-                  <button className="bg-green-100 w-8 h-8 sm:w-10 sm:h-10 flex justify-center items-center rounded-full hover:bg-green-200 transition-colors">
+                  <button className="bg-green-100 w-8 h-8 sm:w-12 sm:h-12 flex justify-center items-center rounded-full hover:bg-green-200 transition-colors">
                     <img
                       src={share}
                       alt="Share"

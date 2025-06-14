@@ -1,13 +1,21 @@
-import { FaChevronDown } from "react-icons/fa";
-import { MdOutlineDiscount } from "react-icons/md";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import tickets from '../../assets/images/tickets.png'
 import Breadcrumb from "../../components/Breadcrumb";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 import DeleteGroupModal from "../../components/modal/DeleteGroupModal";
 import { useState } from "react";
 
+
 const Page5 = () => {
   const [showModal, setShowModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const coupons = [
+    "10% OFF on Lunch Orders",
+    "Free Delivery for First Order",
+    "Buy 1 Get 1 Free",
+  ];
 
   const handleDelete = () => {
     console.log("Group deleted");
@@ -140,16 +148,32 @@ const Page5 = () => {
             </div>
           </div>
 
-          {/* Coupon View */}
-          <div className="bg-green-100 text-black rounded-lg p-3 md:p-4 flex items-center justify-between cursor-pointer">
-            <div className="flex items-center gap-2">
-              <MdOutlineDiscount className="text-lg md:text-xl" />
-              <span className="font-semibold text-sm md:text-base">
-                View All Coupons
-              </span>
-            </div>
-            <FaChevronDown />
-          </div>
+
+          <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="bg-[#F2FFEC] text-black rounded-lg p-3 flex items-center justify-between cursor-pointer"
+      >
+        <div className="flex items-center gap-2">
+          <img src={tickets} className="bg-transparent w-[40px]" alt="img" />
+          <span className="font-semibold text-sm md:text-base">
+            View All Coupons
+          </span>
+        </div>
+        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+      </div>
+
+      {/* Dropdown Content */}
+      {isOpen && (
+        <div className="bg-white border border-[#F2FFEC] rounded-md shadow-md mt-2">
+          <ul className="text-sm text-gray-700 divide-y divide-gray-100">
+            {coupons.map((coupon, index) => (
+              <li key={index} className="p-3 hover:bg-[#F2FFEC] cursor-pointer">
+                {coupon}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
         </div>
 
         {/* Right Column - Order Summary */}
@@ -227,7 +251,7 @@ const Page5 = () => {
                   Platform fee
                 </div>
                 <div className="text-gray-600 text-sm md:text-base underline decoration-dashed">
-                  GST & Restaurant charges
+                  GST 
                 </div>
               </div>
               <div className="text-right space-y-2 md:space-y-3">

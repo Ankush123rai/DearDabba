@@ -91,7 +91,7 @@ const LoginForm = () => {
                     name="whatsapp"
                     checked={whatsappOption === "different"}
                     onChange={() => setWhatsappOption("different")}
-                  className="text-[#5BB834] focus:ring-green-500"
+                    className="text-[#5BB834] focus:ring-green-500"
                   />
                   <span className="text-sm text-gray-600">
                     I have a different WhatsApp number
@@ -100,17 +100,17 @@ const LoginForm = () => {
               </div>
 
               {whatsappOption === "different" && (
-                <div>
+                <div className="px-4 py-2.5 bg-[#F9F9F9] border border-l-0 border-gray-200 rounded-xl">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     WhatsApp number<span className="text-red-500">*</span>
                   </label>
                   <div className="flex">
-                    <span className="inline-flex items-center px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-l-md">
+                    <span className="inline-flex items-center bg-[#F9F9F9] pr-3 border-r-2 border-gray-400">
                       +91
                     </span>
                     <input
                       type="tel"
-                      className="sm:flex-1 w-full px-4 py-2.5 bg-gray-50 border border-l-0 border-gray-200 rounded-r-md focus:outline-none focus:ring-1 focus:ring-green-500"
+                      className="sm:flex-1 bg-[#F9F9F9] w-full px-2 focus:outline-none focus:ring-1 focus:ring-gray-50"
                     />
                   </div>
                 </div>
@@ -118,22 +118,33 @@ const LoginForm = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Address<span className="text-red-500">*</span>
+              <label className="block text-xl font-medium text-gray-700 mb-1">
+                Add your address <span className="text-red-500">*</span>
               </label>
-              <textarea
-                rows={4}
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500"
-                placeholder="Adding your proper delivery address would allow our delivery guy to make an effortless delivery."
+              <label className=" text-gray-600 text-md mb-5">
+              Adding your proper delivery address would allow our delivery guy to make an effortless delivery
+              </label>
+
+              <div className="px-4 py-2.5 bg-[#F9F9F9] border border-l-0 border-gray-200 rounded-xl">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                Address<span className="text-red-500">*</span>
+                </label>
+                <textarea
+                rows={2}
+                className="w-full px-4  bg-[#F9F9F9] focus:outline-none focus:ring-1 focus:ring-green-500"
               ></textarea>
+
+              </div>
             </div>
 
+            <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="w-full py-3 bg-[#5BB834] text-white rounded-md hover:bg-green-600 transition-colors font-medium"
+              className="w-full sm:w-[554px] py-3 bg-[#5BB834] text-white rounded-md hover:bg-green-600 transition-colors font-medium"
             >
               Continue
             </button>
+            </div>
           </form>
 
           <p className="mt-6 text-center text-sm text-gray-600">

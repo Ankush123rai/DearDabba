@@ -51,7 +51,7 @@ const AddressForm = () => {
             <div className="sm:w-1/4 w-full">
               <div className="bg-[#F9F9F9] rounded-2xl px-4 py-3 sm:px-5">
                 <label className="block">
-                  <span className="text-[#666666] block text-sm sm:text-base">Shop/Plot number*</span>
+                  <span className="text-[#666666] block text-sm sm:text-base">Plot number <span className="text-red-500">*</span></span>
                   <input
                     type="text"
                     name="shopPlotNumber"
@@ -81,7 +81,7 @@ const AddressForm = () => {
 
           <div className="bg-[#F9F9F9] rounded-2xl px-4 py-3 sm:px-5">
             <label className="block">
-              <span className="text-[#666666] block text-sm sm:text-base">Building/ Mall/ Complex name*</span>
+              <span className="text-[#666666] block text-sm sm:text-base">Building/ Mall/ Complex name <span className="text-red-500">*</span></span>
               <input
                 type="text"
                 name="buildingName"
@@ -96,7 +96,7 @@ const AddressForm = () => {
             <div className="flex-1">
               <div className="bg-[#F9F9F9] rounded-2xl px-4 py-3 sm:px-5">
                 <label className="block">
-                  <span className="text-[#666666] block text-sm sm:text-base">Landmark*</span>
+                  <span className="text-[#666666] block text-sm sm:text-base">Landmark <span className="text-red-500">*</span></span>
                   <input
                     type="text"
                     name="landmark"
@@ -111,7 +111,7 @@ const AddressForm = () => {
             <div className="flex-1">
               <div className="bg-[#F9F9F9] rounded-2xl px-4 py-3 sm:px-5">
                 <label className="block">
-                  <span className="text-[#666666] block text-sm sm:text-base">Pincode*</span>
+                  <span className="text-[#666666] block text-sm sm:text-base">Pincode <span className="text-red-500">*</span></span>
                   <input
                     type="text"
                     name="pincode"

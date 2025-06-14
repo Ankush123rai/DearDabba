@@ -12,51 +12,62 @@ import About from './profile-dashboard/About';
 import FeedbackForm from './profile-dashboard/FeedbackForm';
 import Report from './profile-dashboard/Report';
 import { IoIosLogOut } from 'react-icons/io';
+import profile from '../assets/images/profile.png'
+import collection from '../assets/images/collection.png'
+import booking from '../assets/images/booking.png'
+import Dinning from '../assets/images/dining.png'
+import setting from '../assets/images/setting.png'
+import about from '../assets/images/about.png'
+import subscription from '../assets/images/subscription.png'
+import wallet from '../assets/images/wallet.png'
+import chat from '../assets/images/chat.png'
+import report from '../assets/images/report.png'
+import yourOrder from '../assets/images/your-order.png'
 
 const tabs = [
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:profile,
     title:"My profile"
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:collection,
     title:'Collection',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:yourOrder,
     title:'Your order', 
   
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:booking,
     title:'Booking',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:Dinning,
     title:'Dinning transaction',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:setting,
     title:'Settings',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:about,
     title:'About',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:chat,
     title:'Send feedback',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:report,
     title:'Report store',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:subscription,
     title:'My subscription',
   },
   {
-    img:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img:wallet,
     title:'Wallet',
   },
 ];

@@ -4,9 +4,10 @@ import PaymentOptions from "../components/PaymentOptions";
 import OrderItem from "../components/OrderItem";
 import Breadcrumb from "../components/Breadcrumb";
 import { useNavigate } from "react-router-dom";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { IoShareSocial } from "react-icons/io5";
 import Footer from "../components/Footer";
+import tickets from '.././assets/images/tickets.png'
 
 const Cart: React.FC = () => {
   const navigate = useNavigate();
@@ -36,6 +37,14 @@ const Cart: React.FC = () => {
       isVeg: true,
     },
   ]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const coupons = [
+    "10% OFF on Lunch Orders",
+    "Free Delivery for First Order",
+    "Buy 1 Get 1 Free",
+  ];
 
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -154,9 +163,31 @@ const Cart: React.FC = () => {
             ))}
           </div>
 
-          <button className="w-full py-2 border border-gray-300 rounded-lg mt-4 flex items-center justify-center">
+          <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="bg-[#F2FFEC] mt-5 text-black rounded-lg p-3 flex items-center justify-between cursor-pointer"
+      >
+        <div className="flex items-center gap-2">
+          <img src={tickets} className="bg-transparent w-[40px]" alt="img" />
+          <span className="font-semibold text-sm md:text-base">
             View All Coupons
-          </button>
+          </span>
+        </div>
+        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
+      </div>
+
+      {/* Dropdown Content */}
+      {isOpen && (
+        <div className="bg-white border border-[#F2FFEC] rounded-md shadow-md mt-2">
+          <ul className="text-sm text-gray-700 divide-y divide-gray-100">
+            {coupons.map((coupon, index) => (
+              <li key={index} className="p-3 hover:bg-[#F2FFEC] cursor-pointer">
+                {coupon}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
         </div>
 
         {placeOrder ? (

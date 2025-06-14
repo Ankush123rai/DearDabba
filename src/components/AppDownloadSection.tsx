@@ -1,3 +1,4 @@
+import { FaApple } from 'react-icons/fa';
 import phone1 from '../assets/images/phone1.png';
 import phone2 from '../assets/images/phone2.png';
 
@@ -7,8 +8,8 @@ const AppDownloadSection = () => {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-7">
         <div className="w-full lg:w-1/2 order-1 mb-8 lg:mb-0">
           <div className="relative h-[400px] lg:h-[500px]">
-            <div className="absolute left-[2.5rem] lg:left-[3.5rem] sm:top-[150px] top-[100px] w-1/2 max-w-[200px] lg:max-w-[250px] z-10">
-              <div className="relative">
+            <div className="absolute left-[-3rem] lg:left-[2rem] sm:top-[150px] top-[100px]  max-w-[200px] lg:max-w-[381px] z-10">
+              <div className="relative top-[-20px] left-[1rem]">
                 <img 
                   src={phone1} 
                   alt="iPhone mockup" 
@@ -19,7 +20,7 @@ const AppDownloadSection = () => {
             </div>
 
             {/* Second phone */}
-            <div className="absolute right-0 lg:right-10 top-16 lg:top-24 w-1/2 max-w-[200px] lg:max-w-[250px] z-0">
+            <div className="absolute right-0 lg:right-[-2rem] top-16 lg:top-24  max-w-[200px] lg:max-w-[330px] z-0">
               <div className="relative">
                 <img 
                   src={phone2}
@@ -72,15 +73,15 @@ const AppDownloadSection = () => {
             </label>
           </div>
 
-          <div className="space-y-4">
+          <div className="flex gap-3">
             <div className="w-full p-3 border border-gray-300 rounded-2xl focus-within:border-[#5BB834] focus-within:ring-1 focus-within:ring-[#5BB834] transition-all">
               <input 
                 type="text" 
                 placeholder="Enter your phone number" 
-                className="w-full outline-none text-center text-gray-700 placeholder-gray-400"
+                className="w-full outline-none  text-gray-700 placeholder-gray-400"
               />
             </div>
-            <button className="w-full py-3 bg-[#5BB834] hover:bg-[#4aa02c] text-white rounded-lg font-medium transition-colors duration-300 shadow-md">
+            <button className="w-full sm:w-[180px] py-3 bg-[#5BB834] hover:bg-[#4aa02c] text-white rounded-lg font-medium transition-colors duration-300 shadow-md">
               Share App Link
             </button>
           </div>
@@ -90,12 +91,7 @@ const AppDownloadSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
               <button className="flex items-center gap-2 px-4 py-2 border border-gray-800 rounded-md hover:bg-gray-50 transition-colors">
                 <div className="relative w-5 h-5">
-                  <div className="absolute inset-0">
-                    <div className="absolute left-0.5 right-28 top-full -bottom-52 bg-[#EA4335]"></div>
-                    <div className="absolute left-45 right-0 top-71 -bottom-14 bg-[#FBBC04]"></div>
-                    <div className="absolute left-0 right-51 top-91 -bottom-75 bg-[#4285F4]"></div>
-                    <div className="absolute left-0.5 right-29 top-1/2 bottom-0 bg-[#34A853]"></div>
-                  </div>
+                  <img src="https://cdn-icons-png.flaticon.com/512/732/732208.png" alt="" />
                 </div>
                 <div className="flex flex-col items-start">
                   <span className="text-xs uppercase text-gray-600">GET IT ON</span>
@@ -104,10 +100,7 @@ const AppDownloadSection = () => {
               </button>
               <button className="flex items-center gap-2 px-4 py-2 border border-gray-800 rounded-md hover:bg-gray-50 transition-colors">
                 <div className="relative w-5 h-5">
-                  <div className="absolute inset-0">
-                    <div className="absolute inset-0 top-1/4 bg-gray-800"></div>
-                    <div className="absolute left-1/2 right-1/4 top-0 bottom-3/4 bg-gray-800"></div>
-                  </div>
+                <FaApple className='text-[25px]'/>
                 </div>
                 <div className="flex flex-col items-start">
                   <span className="text-xs text-gray-600">Download on the</span>

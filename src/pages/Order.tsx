@@ -120,7 +120,7 @@ const FoodOrderApp: React.FC = () => {
               </div>
               <div className="flex flex-row justify-center items-center p-0 gap-[4.69px] w-[314.17px] h-[33px]">
                 <div className="w-[314.17px] h-[33px] font-poppins font-normal text-[21.88px] leading-[33px] flex items-center underline text-[#666666]">
-                  GST & Restaurant charges
+                  GST 
                 </div>
               </div>
             </div>

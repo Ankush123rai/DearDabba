@@ -1,7 +1,8 @@
 import Breadcrumb from "../../components/Breadcrumb";
 import LocationSearchBar from "../../components/LocationSearchBar";
 import KitchenCardList from "../../components/cards/KitchenCardList";
-import vegetarian from '../../assets/images/vegetarian.png'
+import vegetarian from '../../assets/images/vegetarian.png';
+import leaf from '../../assets/images/leaf.png'
 import { BiFoodTag } from "react-icons/bi";
 import Footer from "../../components/Footer";
 
@@ -19,7 +20,7 @@ const CateringService = () => {
 
       <div className="flex flex-col lg:flex-row gap-8 p-4">
         <div className="w-full lg:max-w-xl flex flex-col gap-6">
-          <button className="font-medium text-lg w-full bg-[#5BB8342E] rounded-lg py-3 text-[#5BB834]">
+          <button className="font-medium text-lg w-full bg-[#5BB8342E] rounded-2xl py-3 text-[#5BB834]">
             Add Date
           </button>
           <div className="flex justify-between flex-wrap gap-4">
@@ -30,7 +31,7 @@ const CateringService = () => {
             ].map(({ title, time, active }) => (
               <div
                 key={title}
-                className={`flex-1 min-w-[140px] p-4 rounded-xl flex flex-col items-center ${
+                className={`flex-1 min-w-[140px] p-4 rounded-3xl flex flex-col items-center ${
                   active ? 'bg-[#5BB834]' : 'bg-[#F2FFED]'
                 }`}
               >
@@ -51,7 +52,7 @@ const CateringService = () => {
             ].map(({ time, active }) => (
               <div
                 key={time}
-                className={`px-4 py-2 min-w-[140px] rounded-lg ${
+                className={`px-4 text-center py-2 min-w-[140px] rounded-lg ${
                   active ? 'bg-[#5BB834] text-white' : 'bg-[#F2FFED] text-[#267F00]'
                 } text-sm`}
               >
@@ -81,12 +82,13 @@ const CateringService = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-6 h-6 border border-[#5BB834] rounded bg-white"></div>
                   <div className="flex items-center gap-3">
                   <input
                         type="checkbox"
                         className="w-6 h-6 accent-[#5BB834]"
                       />
+
+                      <img src={vegetarian} className="w-6 ml-2" alt="vegan" />
                     <div className="text-2xl font-medium text-[#2A334A]">Vegan</div>
                   </div>
                 </div>
@@ -105,9 +107,13 @@ const CateringService = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-6 h-6 border border-[#5BB834] rounded bg-white"></div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10" />
+                  <input
+                        type="checkbox"
+                        className="w-6 h-6 accent-[#5BB834]"
+                      />
+
+                      <img src={leaf} className="w-6 ml-2" alt="Jain" />
                     <div className="text-2xl font-medium text-[#2A334A]">Jain</div>
                   </div>
                 </div>
@@ -146,7 +152,7 @@ const CateringService = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="w-full bg-[#5BB834] m-5 py-3 rounded-xl text-white text-lg font-medium">
+            <button className="w-full sm:w-[476px] bg-[#5BB834] m-5 p-3 rounded-xl text-white text-lg font-medium">
               Proceed
             </button>
           </div>

@@ -22,7 +22,7 @@ const Collection = () => {
                     <p className="text-sm text-green-600 mt-1">
                     15 mins  • 1km
                     </p>
-                    <p className="text-md text-green-600 mt-1 font-bold"> 30% OFF</p>
+                    <p className="text-md text-green-600 mt-1 font-medium"> 30% OFF</p>
                   </div>
                   <div className="text-right">
                   <div className="flex gap-3">
